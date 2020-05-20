@@ -2,17 +2,17 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappih    = 24;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 14;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 14;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 34;       /* vert outer gap between windows and screen edge */
+static const unsigned int snap      = 25;       /* snap pixel */
+static const unsigned int gappih    = 30;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 25;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 15;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 25;       /* vert outer gap between windows and screen edge */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
-static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
+static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=12", "JoyPixels:pixelsize=12:antialias=true:autohint=true"  };
-static char dmenufont[]             = "monospace:size=12";
+static const char *fonts[]          = { "monospace:size=13", "JoyPixels:pixelsize=13:antialias=true:autohint=true"  };
+static char dmenufont[]             = "monospace:size=13";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -97,7 +97,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, NULL };
+static const char *dmenucmd[] = { "dmenu_aliases", "-m", dmenumon, "-fn", dmenufont, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 #include <X11/XF86keysym.h>
@@ -128,7 +128,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_BackSpace,	spawn,		SHCMD("sysact") },
 
 	{ MODKEY,			XK_Tab,		view,		{0} },
-	/* { MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("") }, */
+	{ MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("xscreensaver-command -lock") },
 	{ MODKEY,			XK_q,		killclient,	{0} },
 	{ MODKEY|ShiftMask,		XK_q,		spawn,		SHCMD("sysact") },
 	{ MODKEY,			XK_w,		spawn,		SHCMD("$BROWSER") },
@@ -136,7 +136,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_e,		spawn,		SHCMD("st -e neomutt ; pkill -RTMIN+12 dwmblocks; rmdir ~/.abook") },
 	{ MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD("st -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
 	{ MODKEY,			XK_r,		spawn,		SHCMD("st -e lf") },
-	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD("st -e ytop") },
+	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD("st -e  ytop -asbp") },
 	{ MODKEY,			XK_t,		setlayout,	{.v = &layouts[2]} }, /* tile */
 	{ MODKEY|ShiftMask,		XK_t,		setlayout,	{.v = &layouts[1]} }, /* bstack */
 	{ MODKEY,			XK_y,		setlayout,	{.v = &layouts[0]} }, /* spiral */
@@ -161,7 +161,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_s,		togglesticky,	{0} },
 	{ MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("killall screenkey || screenkey &") },
 	{ MODKEY,			XK_d,		spawn,          {.v = dmenucmd } },
-	/* { MODKEY,			XK_d,		spawn,		SHCMD("") } }, */
+	{ MODKEY|ShiftMask,		XK_d,		spawn,		SHCMD("/home/francesco/.local/bin/dmenu-ssgen") },
 	{ MODKEY,			XK_f,		togglefullscr,	{0} },
 	{ MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[8]} },
 	{ MODKEY,			XK_g,		shiftview,	{ .i = -1 } },
@@ -208,7 +208,7 @@ static Key keys[] = {
 	// { MODKEY,			XK_F1,		spawn,		SHCMD("groff -mom /usr/local/share/dwm/larbs.mom -Tpdf | zathura -") },
 	// { MODKEY,			XK_F2,		spawn,		SHCMD("tutorialvids") },
 	// { MODKEY,			XK_F3,		spawn,		SHCMD("displayselect") },
-	{ MODKEY,			XK_F4,		spawn,		SHCMD("st -e pulsemixer; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY,			XK_F4,		spawn,		SHCMD("st -e pamix; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_F5,		xrdb,		{.v = NULL } },
 	{ MODKEY,			XK_F6,		spawn,		SHCMD("torwrap") },
 	{ MODKEY,			XK_F7,		spawn,		SHCMD("td-toggle") },
@@ -237,9 +237,9 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioRewind,	spawn,		SHCMD("mpc seek -10") },
 	{ 0, XF86XK_AudioForward,	spawn,		SHCMD("mpc seek +10") },
 	{ 0, XF86XK_AudioMedia,		spawn,		SHCMD("st -e ncmpcpp") },
-	// { 0, XF86XK_PowerOff,		spawn,		SHCMD("sysact") },
+	{ 0, XF86XK_PowerOff,		spawn,		SHCMD("sysact") },
 	{ 0, XF86XK_Calculator,		spawn,		SHCMD("st -e bc -l") },
-	{ 0, XF86XK_Sleep,		spawn,		SHCMD("sudo -A zzz") },
+	{ 0, XF86XK_Sleep,		spawn,		SHCMD("xscreensaver-command -lock") },
 	{ 0, XF86XK_WWW,		spawn,		SHCMD("$BROWSER") },
 	{ 0, XF86XK_DOS,		spawn,		SHCMD("st") },
 	{ 0, XF86XK_ScreenSaver,	spawn,		SHCMD("slock & xset dpms force off; mpc pause; pauseallmpv") },
@@ -251,8 +251,8 @@ static Key keys[] = {
 	{ 0, XF86XK_TouchpadToggle,	spawn,		SHCMD("(synclient | grep 'TouchpadOff.*1' && synclient TouchpadOff=0) || synclient TouchpadOff=1") },
 	{ 0, XF86XK_TouchpadOff,	spawn,		SHCMD("synclient TouchpadOff=1") },
 	{ 0, XF86XK_TouchpadOn,		spawn,		SHCMD("synclient TouchpadOff=0") },
-	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("xbacklight -inc 15") },
-	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("xbacklight -dec 15") },
+	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("brightness inc 100") },
+	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("brightness dec 100") },
 
 	/* { MODKEY|Mod4Mask,              XK_h,      incrgaps,       {.i = +1 } }, */
 	/* { MODKEY|Mod4Mask,              XK_l,      incrgaps,       {.i = -1 } }, */
@@ -283,7 +283,7 @@ static Button buttons[] = {
 	{ ClkStatusText,        0,              Button4,        sigdwmblocks,   {.i = 4} },
 	{ ClkStatusText,        0,              Button5,        sigdwmblocks,   {.i = 5} },
 	{ ClkStatusText,        ShiftMask,      Button1,        sigdwmblocks,   {.i = 6} },
-	{ ClkStatusText,        ShiftMask,      Button3,        spawn,          SHCMD("st -e nvim ~/.local/src/dwmblocks/config.h") },
+	{ ClkStatusText,        ShiftMask,      Button3,        spawn,          SHCMD("st -e nvim ~/programs_drivers/suckless_stuff/dwmblocks/config.h") },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        defaultgaps,	{0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },

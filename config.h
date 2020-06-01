@@ -48,6 +48,7 @@ static const Rule rules[] = {
 	*/
 	/* class    instance      title       	 tags mask    isfloating   isterminal  noswallow  monitor */
 	{ "St",       NULL,       NULL,       	    0,              0,         1,         0,        -1 },
+	{ "copyq",    NULL,       NULL,       	    0,              1,         0,         0,        -1 },
 	{ NULL,       NULL,       "Event Tester",   0,              0,         0,         1,        -1 },
 	{ NULL,      "spterm",    NULL,       	    SPTAG(0),       1,         1,         0,        -1 },
 	{ NULL,      "spcalc",    NULL,       	    SPTAG(1),       1,         1,         0,        -1 },
@@ -110,7 +111,7 @@ static Key keys[] = {
 	STACKKEYS(MODKEY|ShiftMask,                push)
 	/* { MODKEY|ShiftMask,		XK_Escape,	spawn,	SHCMD("") }, */
 	{ MODKEY,			XK_dead_grave,	spawn,	SHCMD("dmenuunicode") },
-	/* { MODKEY|ShiftMask,		XK_grave,	togglescratch,	SHCMD("") }, */
+	/* { MODKEY|ShiftMask,		XK_dead_grave,	togglescratch,	SHCMD("") }, */
 	TAGKEYS(			XK_1,		0)
 	TAGKEYS(			XK_2,		1)
 	TAGKEYS(			XK_3,		2)
@@ -222,6 +223,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_space,	zoom,		{0} },
 	{ MODKEY|ShiftMask,		XK_space,	togglefloating,	{0} },
 
+	// Screenshots && Screencasts
 	{ 0,				XK_Print,	spawn,		SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
 	{ ShiftMask,			XK_Print,	spawn,		SHCMD("maimpick") },
 	{ MODKEY,			XK_Print,	spawn,		SHCMD("dmenurecord") },

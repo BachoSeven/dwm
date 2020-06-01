@@ -1,4 +1,4 @@
-This is Luke's build of dwm with edits for my own setup
+This is Luke's build of dwm with edits for my own [setup](https://github.com/BachoSeven/mydotFiles)
 
 ## FAQ
 

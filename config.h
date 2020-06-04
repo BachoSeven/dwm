@@ -164,7 +164,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_s,		togglesticky,	{0} },
 	{ MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("killall screenkey || screenkey &") },
 	{ MODKEY,			XK_d,		spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,		XK_d,		spawn,		SHCMD("/home/francesco/.local/bin/dmenu-ssgen") },
+	{ MODKEY|ShiftMask,		XK_d,		spawn,		SHCMD("dmenu-ssgen") },
 	{ MODKEY,			XK_f,		togglefullscr,	{0} },
 	{ MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[8]} },
 	{ MODKEY,			XK_g,		shiftview,	{ .i = -1 } },

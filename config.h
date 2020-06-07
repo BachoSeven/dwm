@@ -131,7 +131,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_BackSpace,	spawn,		SHCMD("sysact") },
 
 	{ MODKEY,			XK_Tab,		view,		{0} },
-	{ MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("xscreensaver-command -lock") },
+	// { MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("xscreensaver-command -lock") },
 	{ MODKEY,			XK_q,		killclient,	{0} },
 	{ MODKEY|ShiftMask,		XK_q,		spawn,		SHCMD("sysact") },
 	{ MODKEY,			XK_w,		spawn,		SHCMD("$BROWSER") },
@@ -243,7 +243,7 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioMedia,		spawn,		SHCMD("st -e ncmpcpp") },
 	{ 0, XF86XK_PowerOff,		spawn,		SHCMD("sysact") },
 	{ 0, XF86XK_Calculator,		spawn,		SHCMD("st -e bc -l") },
-	{ 0, XF86XK_Sleep,		spawn,		SHCMD("xscreensaver-command -lock") },
+	// { 0, XF86XK_Sleep,		spawn,		SHCMD("xscreensaver-command -lock") },
 	{ 0, XF86XK_WWW,		spawn,		SHCMD("$BROWSER") },
 	{ 0, XF86XK_DOS,		spawn,		SHCMD("st") },
 	{ 0, XF86XK_ScreenSaver,	spawn,		SHCMD("slock & xset dpms force off; mpc pause; pauseallmpv") },

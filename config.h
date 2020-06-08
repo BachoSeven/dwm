@@ -127,8 +127,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_minus,	spawn,		SHCMD("pamixer --allow-boost -d 15; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_equal,	spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY|ShiftMask,		XK_equal,	spawn,		SHCMD("pamixer --allow-boost -i 15; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY,			XK_BackSpace,	spawn,		SHCMD("sysact") },
-	{ MODKEY|ShiftMask,		XK_BackSpace,	spawn,		SHCMD("sysact") },
+	{ MODKEY,			XK_BackSpace,	spawn,		SHCMD("remaps") },
+	{ MODKEY|ShiftMask,		XK_BackSpace,	spawn,		SHCMD("remaps intl") },
 
 	{ MODKEY,			XK_Tab,		view,		{0} },
 	// { MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("xscreensaver-command -lock") },
@@ -156,8 +156,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_bracketleft,		spawn,		SHCMD("mpc seek -60") },
 	{ MODKEY,			XK_bracketright,	spawn,		SHCMD("mpc seek +10") },
 	{ MODKEY|ShiftMask,		XK_bracketright,	spawn,		SHCMD("mpc seek +60") },
-	{ MODKEY,			XK_backslash,		spawn,		SHCMD("remaps") },
-	{ MODKEY|ShiftMask,		XK_backslash,		spawn,		SHCMD("remaps intl") },
+	{ MODKEY,			XK_backslash,			view,		{0} },
+	// { MODKEY|ShiftMask,		XK_backslash,		spawn,		SHCMD("") },
 
 	{ MODKEY,			XK_a,		togglegaps,	{0} },
 	{ MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },
@@ -231,8 +231,8 @@ static Key keys[] = {
 	{ MODKEY,			XK_Delete,	spawn,		SHCMD("dmenurecord kill") },
 
 	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 3; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer --allow-boost -d 3; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioPrev,		spawn,		SHCMD("mpc prev") },
 	{ 0, XF86XK_AudioNext,		spawn,		SHCMD("mpc next") },
 	{ 0, XF86XK_AudioPause,		spawn,		SHCMD("mpc pause") },

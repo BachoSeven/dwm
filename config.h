@@ -11,17 +11,38 @@ static const int swallowfloating    = 0;        /* 1 means swallow floating wind
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=15", "JoyPixels:pixelsize=14:antialias=true:autohint=true"  };
+static const char *fonts[]          = { "monospace:size=16", "JoyPixels:pixelsize=14:antialias=true:autohint=true"  };
+static char normfgcolor[]           = "#bbbbbb";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
-static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
-static char selbordercolor[]        = "#770000";
 static char selbgcolor[]            = "#005577";
+static char selbordercolor[]        = "#770000";
+static char statusfg[]		    = "#ebdbb2";
+static char statusbg[]		    = "#282828";
+static char statusborder[]	    = "#1d2021";
+static char tagnormfg[]		    = "#ebdbb2";
+static char tagnormbg[]		    = "#282828";
+static char tagnormborder[]	    = "#1d2021";
+static char tagselfg[]		    = "#ebdbb2";
+static char tagselbg[]		    = "#005577";
+static char tagselborder[]	    = "#1d2021";
+static char infonormfg[]	    = "#ebdbb2";
+static char infonormbg[]	    = "#282828";
+static char infonormborder[]	    = "#1d2021";
+static char infoselfg[]		    = "#ebdbb2";
+static char infoselbg[]		    = "#005577";
+static char infoselborder[]	    = "#1d2021";
+
 static char *colors[][3] = {
        /*               fg           bg           border   */
-       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+	[SchemeNorm]  	 = { normfgcolor, normbgcolor, normbordercolor },
+	[SchemeSel]  	 = { selfgcolor,  selbgcolor,  selbordercolor  },
+	[SchemeStatus]   = { statusfg, statusbg, statusborder  }, // Statusbar right {text,background,not used but cannot be empty}
+	[SchemeTagsNorm] = { tagnormfg, tagnormbg, tagnormborder }, // Tagbar left unselected {text,background,not used but cannot be empty}
+	[SchemeTagsSel]  = { tagselfg, tagselbg, tagselborder }, // Tagbar left selected {text,background,not used but cannot be empty}
+	[SchemeInfoNorm] = { infonormfg, infonormbg, infonormborder }, // infobar middle  unselected {text,background,not used but cannot be empty}
+	[SchemeInfoSel]  = { infoselfg, infoselbg, infoselborder }, // infobar middle  selected {text,background,not used but cannot be empty}
 };
 
 typedef struct {

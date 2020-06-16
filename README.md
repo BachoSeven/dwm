@@ -1,3 +1,8 @@
+#### Additions to luke's build
+
+A part from keybindings and additional and different sratchpad/programs, I have added the following patches:
+- colorbar
+
 This is Luke's build of dwm with edits for my own [setup](https://github.com/BachoSeven/mydotFiles)
 
 ## FAQ

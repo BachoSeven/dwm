@@ -11,7 +11,7 @@ static const int swallowfloating    = 0;        /* 1 means swallow floating wind
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=16", "JoyPixels:pixelsize=14:antialias=true:autohint=true"  };
+static const char *fonts[]          = { "monospace:size=16", "JoyPixels:pixelsize=12:antialias=true:autohint=true" };
 static char normfgcolor[]           = "#bbbbbb";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
@@ -51,7 +51,7 @@ typedef struct {
 } Sp;
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
 const char *spcmd2[] = {"st", "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-e", "bc", "-lq", NULL };
-const char *spcmd3[] = {"st", "-n", "spbm", "-g", "120x30", "-e", "b", "full", NULL };
+const char *spcmd3[] = {"st", "-n", "spbm", "-g", "120x30", "-e", "bm", "full", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
@@ -71,6 +71,7 @@ static const Rule rules[] = {
 	{ "St",       NULL,       NULL,       	    0,              0,         1,         0,        -1 },
 	{ "copyq",    NULL,       NULL,       	    0,              1,         0,         0,        -1 },
 	{ NULL,       NULL,       "Event Tester",   0,              0,         0,         1,        -1 },
+	{ "Brave-browser", NULL, NULL, 		    0,              0,         0,         1,        -1 },
 	{ NULL,      "spterm",    NULL,       	    SPTAG(0),       1,         1,         0,        -1 },
 	{ NULL,      "spcalc",    NULL,       	    SPTAG(1),       1,         1,         0,        -1 },
 	{ NULL,      "spbm",  	  NULL,       	    SPTAG(2),       1,         1,         0,        -1 },
@@ -209,7 +210,7 @@ static Key keys[] = {
 	/* V is automatically bound above in STACKKEYS */
 	{ MODKEY,			XK_b,		togglebar,	{0} },
 	{ MODKEY|ShiftMask,		XK_b,		togglescratch,	{.ui = 2} },
-	// { MODKEY,			XK_n,		spawn,		SHCMD("st -e nvim -c VimwikiIndex") },
+	// { MODKEY,			XK_n,		spawn,		SHCMD("") },
 	{ MODKEY|ShiftMask,		XK_n,		spawn,		SHCMD("st -e newsboat; pkill -RTMIN+6 dwmblocks") },
 	{ MODKEY,			XK_m,		spawn,		SHCMD("st -e ncmpcpp") },
 	{ MODKEY|ShiftMask,		XK_m,		spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },

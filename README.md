@@ -1,9 +1,11 @@
 #### Additions to luke's build
 
-A part from keybindings and additional and different sratchpad/programs, I have added the following patches:
-- colorbar
+This is Luke's build of dwm with edits for my own [setup](https://github.com/BachoSeven/mydotFiles);
+a part from keybindings and additional or different scratchpads/programs, I have added the following eye-candy patches:
 
-This is Luke's build of dwm with edits for my own [setup](https://github.com/BachoSeven/mydotFiles)
+- colorbar for colors in titles and tag indicators
+- status2d for colors in dwmblocks status info
+
 
 ## FAQ
 

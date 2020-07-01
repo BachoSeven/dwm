@@ -75,18 +75,19 @@ static const Rule rules[] = {
 	*/
 	/* class    instance      title       	 tags mask( i={1 << [i-1]} )    isfloating   isterminal  noswallow  monitor */
 	{ "St",       NULL,       NULL,       	    0,              0,         1,         0,        -1 },
-	{ "ncspot",   NULL,       NULL,       	    1 << 8,              0,         1,         0,        -1 },
+	{ "ncspot",   NULL,       NULL,       	    1 << 8,         0,         1,         0,        -1 },
+	{ "Scripting",NULL,	  NULL,  	    1 << 3,         0,         1,         0,        -1 },
 	{ "copyq",    NULL,       NULL,       	    0,              1,         0,         0,        -1 },
 	// Xev
 	{ NULL,       NULL,       "Event Tester",   0,              0,         0,         1,        -1 },
-	{ "Brave-browser", NULL,  NULL,		    1 << 1,              0,         0,         1,        -1 },
+	{ "Brave-browser", NULL,  NULL,		    1 << 1,         0,         0,         1,        -1 },
 	{ NULL,      "spterm",    NULL,       	    SPTAG(0),       1,         1,         0,        -1 },
 	{ NULL,      "spcalc",    NULL,       	    SPTAG(1),       1,         1,         0,        -1 },
 	{ NULL,      "spbm",  	  NULL,       	    SPTAG(2),       1,         1,         0,        -1 },
 };
 
 /* layout(s) */
-static const float mfact     = 0.5; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.60; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */

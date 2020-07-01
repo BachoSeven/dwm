@@ -5,6 +5,7 @@ a part from keybindings and additional or different scratchpads/programs, I have
 
 - colorbar for colors in titles and tag indicators
 - status2d for colors in dwmblocks status info
+- cool_autostart
 
 
 ## FAQ

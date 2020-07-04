@@ -77,6 +77,7 @@ static const Rule rules[] = {
 	{ "St",       NULL,       NULL,       	    0,              0,         1,         0,        -1 },
 	{ "ncspot",   NULL,       NULL,       	    1 << 8,         0,         1,         0,        -1 },
 	{ "ncmpcpp",  NULL,       NULL,       	    1 << 8,         0,         1,         0,        -1 },
+	{ "SoulseekQt",NULL,	  NULL, 	    1 << 5,         0,         1,         0,        -1 },
 	{ "Scripting",NULL,	  NULL,  	    1 << 3,         0,         1,         0,        -1 },
 	{ "copyq",    NULL,       NULL,       	    0,              1,         0,         0,        -1 },
 	// Xev

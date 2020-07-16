@@ -61,7 +61,7 @@ static Sp scratchpads[] = {
 
 static const char *const autostart[] = {
 	"st", NULL,
-	"soulseekqt",NULL,
+	"nicotine",NULL,
 	NULL /* terminate */
 };
 
@@ -73,19 +73,19 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	*/
-	/* class    instance      title       	 tags mask( i={1 << [i-1]} )    isfloating   isterminal  noswallow  monitor */
-	{ "St",       NULL,       NULL,       	    0,              0,         1,         0,        -1 },
-	{ "ncspot",   NULL,       NULL,       	    1 << 8,         0,         1,         0,        -1 },
-	{ "ncmpcpp",  NULL,       NULL,       	    1 << 8,         0,         1,         0,        -1 },
-	{ "SoulseekQt",NULL,	  NULL, 	    1 << 5,         0,         1,         0,        -1 },
-	{ "Scripting",NULL,	  NULL,  	    1 << 3,         0,         1,         0,        -1 },
-	{ "copyq",    NULL,       NULL,       	    0,              1,         0,         0,        -1 },
-	// Xev
-	{ NULL,       NULL,       "Event Tester",   0,              0,         0,         1,        -1 },
-	{ "Brave-browser", NULL,  NULL,		    1 << 1,         0,         0,         1,        -1 },
-	{ NULL,      "spterm",    NULL,       	    SPTAG(0),       1,         1,         0,        -1 },
-	{ NULL,      "spcalc",    NULL,       	    SPTAG(1),       1,         1,         0,        -1 },
-	{ NULL,      "spbm",  	  NULL,       	    SPTAG(2),       1,         1,         0,        -1 },
+	/* class    instance    title		 tags mask	isfloating   isterminal  noswallow  monitor */
+	{ "St",       NULL,      NULL,       	   0,              0,         1,         0,        -1 },
+	{ "ncspot",   NULL,      NULL,       	   1 << 8,         0,         1,         0,        -1 },
+	{ "ncmpcpp",  NULL,      NULL,       	   1 << 8,         0,         1,         0,        -1 },
+	{ "Nicotine", NULL,	 NULL, 		   1 << 5,         0,         1,         0,        -1 },
+	{ "SoulseekQt",NULL,	 NULL, 		   1 << 5,         0,         1,         0,        -1 },
+	{ "Scripting",NULL,	 NULL,  	   1 << 3,         0,         1,         0,        -1 },
+	{ "copyq",    NULL,      NULL,       	   0,              1,         0,         0,        -1 },
+	{ NULL,       NULL,      "Event Tester",   0,              0,         0,         1,        -1 }, // Xev
+	{ "Brave-browser", NULL, NULL,		   1 << 1,         0,         0,         1,        -1 },
+	{ NULL,      "spterm",   NULL,       	   SPTAG(0),       1,         1,         0,        -1 },
+	{ NULL,      "spcalc",   NULL,       	   SPTAG(1),       1,         1,         0,        -1 },
+	{ NULL,      "spbm",  	 NULL,       	   SPTAG(2),       1,         1,         0,        -1 },
 };
 
 /* layout(s) */
@@ -169,8 +169,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_q,		spawn,		SHCMD("sysact") },
 	{ MODKEY,			XK_w,		spawn,		SHCMD("$BROWSER") },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("st -e nmtui-connect") },
-	{ MODKEY,			XK_e,		spawn,		SHCMD("st -e neomutt ; pkill -RTMIN+12 dwmblocks; rmdir ~/.abook") },
-	{ MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD("st -e  abook -C $XDG_CONFIG_HOME/abook/abookrc --datafile $XDG_DATA_HOME/abook/addressbook") },
+	{ MODKEY,			XK_e,		spawn,		SHCMD("st -e neomutt ; pkill -RTMIN+12 dwmblocks") },
+	{ MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD("st -e  abook") },
 	{ MODKEY,			XK_r,		spawn,		SHCMD("st -e lf") },
 	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD("st -e  ytop -asbp") },
 	{ MODKEY,			XK_t,		setlayout,	{.v = &layouts[2]} }, /* tile */

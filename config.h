@@ -52,7 +52,7 @@ typedef struct {
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
 const char *spcmd2[] = {"st", "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-e", "bc", "-lq", NULL };
 const char *spcmd3[] = {"st", "-n", "spbm", "-g", "120x30", "-e", "bm", "full", NULL };
-const char *spcmd4[] = {"st", "-n", "spkp", "-g", "120x40", "-e", "keepassxc", NULL };
+const char *spcmd4[] = {"st", "-n", "spbm", "-g", "120x40", "-e", "keepassxc", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
@@ -89,7 +89,7 @@ static const Rule rules[] = {
 	{ NULL,      "spterm",   NULL,       	   SPTAG(0),       1,         1,         0,        -1 },
 	{ NULL,      "spcalc",   NULL,       	   SPTAG(1),       1,         1,         0,        -1 },
 	{ NULL,      "spbm",  	 NULL,       	   SPTAG(2),       1,         1,         0,        -1 },
-	{ NULL,      "spkp",  	 NULL,       	   SPTAG(3),       1,         0,         0,        -1 },
+	{ NULL,      "spkp",  	 NULL,       	   SPTAG(3),       1,         1,         0,        -1 },
 };
 
 /* layout(s) */

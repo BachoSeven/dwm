@@ -1,6 +1,5 @@
 .gitignore
 *.orig
-patches
 *.rej
 util.o
 dwm

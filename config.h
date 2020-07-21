@@ -52,7 +52,7 @@ typedef struct {
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
 const char *spcmd2[] = {"st", "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-e", "bc", "-lq", NULL };
 const char *spcmd3[] = {"st", "-n", "spbm", "-g", "120x30", "-e", "bm", "full", NULL };
-const char *spcmd3[] = {"st", "-n", "spkp", "-g", "120x40", "-e", "keepassxc", NULL };
+const char *spcmd4[] = {"st", "-n", "spkp", "-g", "120x40", "-e", "keepassxc", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
@@ -218,7 +218,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,		XK_Return,	spawn,		SHCMD("tabbed -c -r 2 st -w id") },
 
 	{ MODKEY,			XK_z,		incrgaps,	{.i = +3 } },
-	{ MODKEY|ShiftMask,		XK_z,		togglescratch,	{.ui = 3},
+	{ MODKEY|ShiftMask,		XK_z,		togglescratch,	{.ui = 3} },
 	{ MODKEY,			XK_x,		incrgaps,	{.i = -3 } },
 	{ MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("Comptoggle") },
 	{ MODKEY,			XK_c,		togglescratch,	{.ui = 1} },

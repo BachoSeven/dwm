@@ -85,7 +85,7 @@ static const Rule rules[] = {
 	{ "copyq",    NULL,      NULL,       	   0,              1,         0,         0,        -1 },
 	{ "Dragon-drag-and-drop",NULL,	NULL,      0,              1,         0,         1,        -1 },
 	{ NULL,       NULL,      "Event Tester",   0,              0,         0,         1,        -1 }, // Xev
-	{ "Brave-browser", NULL, NULL,		   1 << 1,         0,         0,         1,        -1 },
+	{ "Chromium", NULL,	 NULL,		   1 << 1,         0,         0,         1,        -1 },
 	{ NULL,      "spterm",   NULL,       	   SPTAG(0),       1,         1,         0,        -1 },
 	{ NULL,      "spcalc",   NULL,       	   SPTAG(1),       1,         1,         0,        -1 },
 	{ NULL,      "spbm",  	 NULL,       	   SPTAG(2),       1,         1,         0,        -1 },

@@ -176,7 +176,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_e,		spawn,		SHCMD("st -e neomutt ; pkill -RTMIN+12 dwmblocks") },
 	{ MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD("st -e  abook") },
 	{ MODKEY,			XK_r,		spawn,		SHCMD("st -e lf") },
-	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD("st -e  ytop -asbp") },
+	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD("killall ytop || st -e  ytop -asbp") },
 	{ MODKEY,			XK_t,		setlayout,	{.v = &layouts[2]} }, /* tile */
 	{ MODKEY|ShiftMask,		XK_t,		setlayout,	{.v = &layouts[1]} }, /* bstack */
 	{ MODKEY,			XK_y,		setlayout,	{.v = &layouts[0]} }, /* spiral */

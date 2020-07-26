@@ -194,7 +194,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_bracketright,spawn,		SHCMD("mpc seek +10") },
 	{ MODKEY|ShiftMask,		XK_bracketright,spawn,		SHCMD("mpc seek +60") },
 	{ MODKEY,			XK_backslash,	view,		{0} },
-	{ MODKEY|ShiftMask,		XK_backslash,	spawn,		SHCMD("sudo -A googleDNS") },
+	// { MODKEY|ShiftMask,		XK_backslash,	spawn,		SHCMD("") },
 
 	{ MODKEY,			XK_a,		togglegaps,	{0} },
 	{ MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },

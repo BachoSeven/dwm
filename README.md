@@ -4,8 +4,8 @@ This is Luke's build of dwm with edits for my own [setup](https://github.com/Bac
 a part from keybindings and additional or different scratchpads/programs, I have added the following eye-candy patches:
 
 - colorbar for colors in titles and tag indicators
-- status2d for colors in dwmblocks status info
-- cool_autostart
+- noborder (fixed for floating windows)
+- cool autostart
 
 
 ## FAQ

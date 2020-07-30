@@ -63,7 +63,6 @@ static Sp scratchpads[] = {
 
 static const char *const autostart[] = {
 	"st", NULL,
-	"startsoulseekqt",NULL,
 	NULL /* terminate */
 };
 

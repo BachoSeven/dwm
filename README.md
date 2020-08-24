@@ -1,12 +1,12 @@
-#### Additions to luke's build
+### Additions to luke's build
 
 This is Luke's build of dwm with edits for my own [setup](https://github.com/BachoSeven/mydotFiles);
 a part from keybindings and additional or different scratchpads/programs, I have added the following eye-candy patches:
 
+- barpadding :)
 - colorbar for colors in titles and tag indicators
 - noborder (fixed for floating windows)
-- cool autostart
-
+- cool autostart<br>
 
 ## FAQ
 

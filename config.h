@@ -337,8 +337,6 @@ static Button buttons[] = {
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
 	{ ClkClientWin,		MODKEY,		Button4,	incrgaps,	{.i = +1} },
 	{ ClkClientWin,		MODKEY,		Button5,	incrgaps,	{.i = -1} },
-	// { ClkClientWin,         0,		Button9,	spawn,		SHCMD(xdotool key Page_Up) },
-	// { ClkClientWin,         0,		Button8,	spawn,		SHCMD(xdotool key Page_Down) },
 	{ ClkTagBar,            0,              Button1,        view,           {0} },
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },

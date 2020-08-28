@@ -69,8 +69,8 @@ static const char *const autostart[] = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "阮" };
-
+static const char *tags[] = { "🎸", "", "", "", "", "", "", "", "阮" };
+// 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class

@@ -55,12 +55,14 @@ const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
 const char *spcmd2[] = {"st", "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-e", "bc", "-lq", NULL };
 const char *spcmd3[] = {"st", "-n", "spbm", "-g", "120x30", "-e", "bm", "popup", NULL };
 const char *spcmd4[] = {"st", "-n", "spkp", "-g", "120x40", "-e", "keepassxc", NULL };
+const char *spcmd5[] = {"st", "-n", "sphist", "-g", "120x40", "-e", "chromhist", "popup", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
 	{"spcalc",      spcmd2},
 	{"spbm",	spcmd3},
 	{"spkp",	spcmd4},
+	{"sphist",	spcmd5},
 };
 
 static const char *const autostart[] = {
@@ -93,6 +95,7 @@ static const Rule rules[] = {
 	{ NULL,      "spcalc",   NULL,       	   SPTAG(1),       1,         1,         0,        -1 },
 	{ NULL,      "spbm",  	 NULL,       	   SPTAG(2),       1,         1,         0,        -1 },
 	{ NULL,      "spkp",  	 NULL,       	   SPTAG(3),       1,         1,         0,        -1 },
+	{ NULL,      "sphist",   NULL,       	   SPTAG(4),       1,         1,         0,        -1 },
 };
 
 /* layout(s) */
@@ -210,6 +213,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_g,		shiftview,	{ .i = -1 } },
 	{ MODKEY|ShiftMask,		XK_g,		shifttag,	{ .i = -1 } },
 	{ MODKEY,			XK_h,		setmfact,	{.f = -0.05} },
+	{ MODKEY|ShiftMask,		XK_h,		togglescratch,	{.ui = 4} },
 	/* J and K are automatically bound above in STACKKEYS */
 	{ MODKEY,			XK_l,		setmfact,      	{.f = +0.05} },
 	{ MODKEY,			XK_semicolon,	shiftview,	{ .i = 1 } },

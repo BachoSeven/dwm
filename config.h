@@ -13,7 +13,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 7;        /* vertical padding of bar */
 static const int sidepad            = 7;        /* horizontal padding of bar */
-static const char *fonts[]          = { "monospace:size=17", "JoyPixels:pixelsize=18:antialias=true:autohint=true" };
+static const char *fonts[]          = { "monospace:size=16", "JoyPixels:pixelsize=17:antialias=true:autohint=true" };
 static char normfgcolor[]           = "#bbbbbb";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";

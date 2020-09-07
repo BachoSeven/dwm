@@ -194,7 +194,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_o,		incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,		XK_o,		incnmaster,     {.i = -1 } },
 	{ MODKEY,			XK_p,		spawn,		SHCMD("mpc toggle; ncspot-cli -t") },
-	{ MODKEY|ShiftMask,		XK_p,		spawn,		SHCMD("mpc pause ; pauseallmpv") },
+	{ MODKEY|ShiftMask,		XK_p,		spawn,		SHCMD("mpc stop ; pauseallmpv; ncspot-cli -s") },
 	{ MODKEY,			XK_bracketleft,	spawn,		SHCMD("mpc seek -10") },
 	{ MODKEY|ShiftMask,		XK_bracketleft,	spawn,		SHCMD("mpc seek -60") },
 	{ MODKEY,			XK_bracketright,spawn,		SHCMD("mpc seek +10") },

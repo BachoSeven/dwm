@@ -235,7 +235,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_b,		togglescratch,	{.ui = 2} },
 	// { MODKEY,			XK_n,		spawn,		SHCMD("") },
 	{ MODKEY|ShiftMask,		XK_n,		spawn,		SHCMD("st -e newsboat; pkill -RTMIN+6 dwmblocks") },
-	{ MODKEY,			XK_m,		spawn,		SHCMD("kunst --silent & st -c ncmpcpp -e ncmpcpp") },
+	{ MODKEY,			XK_m,		spawn,		SHCMD("setsid -f kunst --silent & st -c ncmpcpp -e ncmpcpp") },
 	{ MODKEY|ShiftMask,		XK_m,		spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_comma,	spawn,		SHCMD("mpc prev") },
 	{ MODKEY|ShiftMask,		XK_comma,	spawn,		SHCMD("mpc seek 0%") },

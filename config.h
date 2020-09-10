@@ -11,8 +11,8 @@ static const int swallowfloating    = 0;        /* 1 means swallow floating wind
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int vertpad            = 7;        /* vertical padding of bar */
-static const int sidepad            = 7;        /* horizontal padding of bar */
+static const int vertpad            = 8;        /* vertical padding of bar */
+static const int sidepad            = 8;        /* horizontal padding of bar */
 static const char *fonts[]          = { "monospace:size=16", "Noto Color Emoji:pixelsize=19:antialias=true:autohint=true" };
 static char normfgcolor[]           = "#bbbbbb";
 static char normbgcolor[]           = "#222222";
@@ -280,9 +280,9 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
 	// { 0, XF86XK_AudioPrev,		spawn,		SHCMD("mpc prev") },
 	// { 0, XF86XK_AudioNext,		spawn,		SHCMD("mpc next") },
-	{ 0, XF86XK_AudioPause,		spawn,		SHCMD("mpc pause") },
-	{ 0, XF86XK_AudioPlay,		spawn,		SHCMD("mpc play") },
-	{ 0, XF86XK_AudioStop,		spawn,		SHCMD("mpc stop") },
+	{ 0, XF86XK_AudioPause,		spawn,		SHCMD("mpc pause; ncspot-cli --pause") },
+	{ 0, XF86XK_AudioPlay,		spawn,		SHCMD("mpc play; ncspot-cli --play") },
+	{ 0, XF86XK_AudioStop,		spawn,		SHCMD("mpc stop; ncspot-cli -s") },
 	// { 0, XF86XK_AudioRewind,	spawn,		SHCMD("mpc seek -10") },
 	// { 0, XF86XK_AudioForward,	spawn,		SHCMD("mpc seek +10") },
 	// { 0, XF86XK_AudioMedia,		spawn,		SHCMD("st -e ncmpcpp") },

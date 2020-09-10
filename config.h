@@ -13,7 +13,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 7;        /* vertical padding of bar */
 static const int sidepad            = 7;        /* horizontal padding of bar */
-static const char *fonts[]          = { "monospace:size=16", "Noto Color Emoji:pixelsize=20:antialias=true:autohint=true" };
+static const char *fonts[]          = { "monospace:size=16", "Noto Color Emoji:pixelsize=19:antialias=true:autohint=true" };
 static char normfgcolor[]           = "#bbbbbb";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
@@ -71,7 +71,7 @@ static const char *const autostart[] = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "阮" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "阮" };
 // 
 // 🎸
 static const Rule rules[] = {
@@ -90,7 +90,7 @@ static const Rule rules[] = {
 	{ "copyq",    NULL,      NULL,       	   0,              1,         0,         0,        -1 },
 	{ "Dragon-drag-and-drop",NULL,	NULL,      0,              1,         0,         1,        -1 },
 	{ NULL,       NULL,      "Event Tester",   0,              0,         0,         1,        -1 }, // Xev
-	{ "Chromium", NULL,	 NULL,		   1 << 1,         0,         0,         1,        -1 },
+	{ "Chromium", NULL,	 NULL,		   1 << 0,         0,         0,         1,        -1 },
 	{ NULL,      "spterm",   NULL,       	   SPTAG(0),       1,         1,         0,        -1 },
 	{ NULL,      "spcalc",   NULL,       	   SPTAG(1),       1,         1,         0,        -1 },
 	{ NULL,      "spbm",  	 NULL,       	   SPTAG(2),       1,         1,         0,        -1 },

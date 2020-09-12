@@ -178,11 +178,11 @@ static Key keys[] = {
 	{ MODKEY,			XK_q,		killclient,	{0} },
 	{ MODKEY|ShiftMask,		XK_q,		spawn,		SHCMD("sysact") },
 	{ MODKEY,			XK_w,		spawn,		SHCMD("$BROWSER") },
-	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("st -e nmtui-connect") },
+	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("killall nmtui-connect >/dev/null || st -e nmtui-connect") },
 	{ MODKEY,			XK_e,		spawn,		SHCMD("st -e neomutt ; pkill -RTMIN+12 dwmblocks") },
 	{ MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD("st -e  abook") },
 	{ MODKEY,			XK_r,		spawn,		SHCMD("st -e lf") },
-	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD("killall ytop >/dev/null || st -e  ytop -asbp") },
+	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD("killall ytop >/dev/null || st -e ytop -asbp") },
 	{ MODKEY,			XK_t,		setlayout,	{.v = &layouts[2]} }, /* tile */
 	{ MODKEY|ShiftMask,		XK_t,		setlayout,	{.v = &layouts[1]} }, /* bstack */
 	{ MODKEY,			XK_y,		setlayout,	{.v = &layouts[0]} }, /* spiral */

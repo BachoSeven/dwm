@@ -71,6 +71,7 @@ static Sp scratchpads[] = {
 
 static const char *const autostart[] = {
 	"kitty", "--hold", "welcome", NULL,
+	TERMINAL, "-c", "sysMon", "-e", "btm", NULL,
 	NULL /* terminate */
 };
 
@@ -91,6 +92,7 @@ static const Rule rules[] = {
 	{ "Nicotine", NULL,	 NULL, 		   1 << 5,         0,         1,         0,        -1 },
 	{ "SoulseekQt",NULL,	 NULL, 		   1 << 5,         0,         1,         0,        -1 },
 	{ "Scripting",NULL,	 NULL,  	   1 << 3,         0,         1,         0,        -1 },
+	{ "sysMon",   NULL,	 NULL,  	   1 << 2,         0,         1,         0,        -1 },
 	{ "copyq",    NULL,      NULL,       	   0,              1,         0,         0,        -1 },
 	{ "Dragon-drag-and-drop",NULL,	NULL,      0,              1,         0,         1,        -1 },
 	{ NULL,       NULL,      "Event Tester",   0,              0,         0,         1,        -1 }, // Xev

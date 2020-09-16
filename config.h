@@ -115,7 +115,7 @@ static const Layout layouts[] = {
 	{ "[@]",	spiral },		/* Deafult: Fibonacci spiral */
 	{ "",	bstack },		/* Master on top, slaves on bottom */
 
- 	{ "﬿=",	tile },			/* Master on left, slaves on right */
+ 	{ "﬿",	tile },			/* Master on left, slaves on right */
 	{ "侀",	dwindle },		/* Decreasing in size right and leftward */
 
 	{ "",	deck },			/* Master on left, slaves in monocle-like mode on right */

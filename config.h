@@ -113,18 +113,18 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[@]",	spiral },		/* Deafult: Fibonacci spiral */
-	{ "TTT",	bstack },		/* Master on top, slaves on bottom */
+	{ "",	bstack },		/* Master on top, slaves on bottom */
 
- 	{ "[]=",	tile },			/* Master on left, slaves on right */
-	{ "[\\]",	dwindle },		/* Decreasing in size right and leftward */
+ 	{ "﬿=",	tile },			/* Master on left, slaves on right */
+	{ "侀",	dwindle },		/* Decreasing in size right and leftward */
 
-	{ "H[]",	deck },			/* Master on left, slaves in monocle-like mode on right */
+	{ "",	deck },			/* Master on left, slaves in monocle-like mode on right */
  	{ "[M]",	monocle },		/* All windows on top of eachother */
 
-	{ "|M|",	centeredmaster },		/* Master in middle, slaves on sides */
-	{ ">M>",	centeredfloatingmaster },	/* Same but master floats */
+	{ "恵",	centeredmaster },		/* Master in middle, slaves on sides */
+	{ "",	centeredfloatingmaster },	/* Same but master floats */
 
-	{ "><>",	NULL },			/* no layout function means floating behavior */
+	{ "",	NULL },			/* no layout function means floating behavior */
 	{ NULL,		NULL },
 };
 
@@ -183,7 +183,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("xdotool key Caps_Lock") },
 	{ MODKEY,			XK_q,		killclient,	{0} },
 	{ MODKEY|ShiftMask,		XK_q,		spawn,		SHCMD("sysact") },
-	{ MODKEY,			XK_w,		spawn,		SHCMD("$BROWSER") },
+	{ MODKEY,			XK_w,		spawn,		SHCMD("$BROWSER --app=file://$HOME/.config/browser/startpage/index.html") },
+	{ MODKEY,			XK_n,		spawn,		SHCMD("$BROWSER") },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("killall nmtui-connect >/dev/null || st -e nmtui-connect") },
 	{ MODKEY,			XK_e,		spawn,		SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks") },
 	{ MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD(TERMINAL " -e  abook") },
@@ -239,7 +240,6 @@ static Key keys[] = {
 	/* V is automatically bound above in STACKKEYS */
 	{ MODKEY,			XK_b,		togglebar,	{0} },
 	{ MODKEY|ShiftMask,		XK_b,		togglescratch,	{.ui = 2} },
-	// { MODKEY,			XK_n,		spawn,		SHCMD("") },
 	{ MODKEY|ShiftMask,		XK_n,		spawn,		SHCMD(TERMINAL " -e newsboat; pkill -RTMIN+6 dwmblocks") },
 	{ MODKEY,			XK_m,		spawn,		SHCMD("setsid -f kunst --silent & st -c ncmpcpp -e ncmpcpp") },
 	{ MODKEY|ShiftMask,		XK_m,		spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },

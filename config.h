@@ -307,8 +307,8 @@ static Key keys[] = {
 	{ 0, XF86XK_TouchpadToggle,	spawn,		SHCMD("touchpadtoggle") },
 	// { 0, XF86XK_TouchpadOff,	spawn,		SHCMD("synclient TouchpadOff=1") },
 	// { 0, XF86XK_TouchpadOn,		spawn,		SHCMD("synclient TouchpadOff=0") },
-	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("brightness inc 2") },
-	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("brightness dec 2") },
+	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("br inc 2") },
+	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("br dec 2") },
 
 	/* { MODKEY|Mod4Mask,              XK_h,      incrgaps,       {.i = +1 } }, */
 	/* { MODKEY|Mod4Mask,              XK_l,      incrgaps,       {.i = -1 } }, */

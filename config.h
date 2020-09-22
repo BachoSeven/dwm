@@ -112,14 +112,14 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 #include "vanitygaps.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[@]",	spiral },		/* Deafult: Fibonacci spiral */
+	{ "❄️",	spiral },		/* Deafult: Fibonacci spiral */
 	{ "",	bstack },		/* Master on top, slaves on bottom */
 
  	{ "﬿",	tile },			/* Master on left, slaves on right */
 	{ "侀",	dwindle },		/* Decreasing in size right and leftward */
 
 	{ "",	deck },			/* Master on left, slaves in monocle-like mode on right */
- 	{ "[M]",	monocle },		/* All windows on top of eachother */
+ 	{ "",	monocle },		/* All windows on top of eachother */
 
 	{ "恵",	centeredmaster },		/* Master in middle, slaves on sides */
 	{ "",	centeredfloatingmaster },	/* Same but master floats */

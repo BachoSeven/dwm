@@ -6,7 +6,8 @@ a part from keybindings and additional or different scratchpads/programs, I have
 - barpadding :)
 - colorbar for colors in titles and tag indicators
 - noborder (fixed for floating windows)
-- cool autostart<br>
+- cool autostart
+- save floats (remembers floating windows' geometries)
 
 ## FAQ
 

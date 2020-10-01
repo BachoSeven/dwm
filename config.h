@@ -87,7 +87,8 @@ static const Rule rules[] = {
 	/* class    instance    title		 tags mask	isfloating   isterminal  noswallow  monitor */
 	{ TERMCLASS,  NULL,      NULL,      	   0,              0,         1,         0,        -1 },
 	{ "ncspot",   NULL,      NULL,       	   1 << 8,         0,         1,         0,        -1 },
-	{ "spotify",       NULL, NULL,		   1 << 8,         0,         0,         0,        -1 },
+	{ "spotify",  NULL,	 NULL,		   1 << 8,         0,         0,         0,        -1 },
+	{ "Spotify",  NULL,	 NULL,		   1 << 8,         0,         0,         0,        -1 },
 	{ "ncmpcpp",  NULL,      NULL,       	   1 << 8,         0,         1,         0,        -1 },
         { NULL,      "Kunst",    NULL,             1 << 8,         1,         0,         0,        -1 },
 	{ "Nicotine", NULL,	 NULL, 		   1 << 5,         0,         1,         0,        -1 },

@@ -39,6 +39,8 @@ static char infonormborder[]	    = "#1d2021";
 static char infoselfg[]		    = "#ebdbb2";
 static char infoselbg[]		    = "#005577";
 static char infoselborder[]	    = "#1d2021";
+static const unsigned int baralpha = 0xd0;
+static const unsigned int borderalpha = OPAQUE;
 
 static char *colors[][3] = {
        /*               fg           bg           border   */
@@ -49,6 +51,17 @@ static char *colors[][3] = {
 	[SchemeTagsSel]  = { tagselfg, tagselbg, tagselborder }, // Tagbar left selected {text,background,not used but cannot be empty}
 	[SchemeInfoNorm] = { infonormfg, infonormbg, infonormborder }, // infobar middle  unselected {text,background,not used but cannot be empty}
 	[SchemeInfoSel]  = { infoselfg, infoselbg, infoselborder }, // infobar middle  selected {text,background,not used but cannot be empty}
+};
+
+static const unsigned int alphas[][3]      = {
+	/*               fg      bg        border     */
+	[SchemeNorm]	 = { OPAQUE, baralpha, borderalpha },
+	[SchemeSel]  	 = { OPAQUE, baralpha, borderalpha },
+	[SchemeStatus]   = { OPAQUE, baralpha, borderalpha },
+	[SchemeTagsNorm] = { OPAQUE, baralpha, borderalpha },
+	[SchemeTagsSel]  = { OPAQUE, baralpha, borderalpha },
+	[SchemeInfoNorm] = { OPAQUE, baralpha, borderalpha },
+	[SchemeInfoSel]  = { OPAQUE, baralpha, borderalpha },
 };
 
 typedef struct {
@@ -127,9 +140,9 @@ static const Layout layouts[] = {
 	{ "恵",	centeredmaster },		/* Master in middle, slaves on sides */
 	{ "",	centeredfloatingmaster },	/* Same but master floats */
 
+	{ "ﱖ", grid },			/* Grid layout */
 	{ "",	NULL },			/* no layout function means floating behavior */
-	{ "ﱖ",      grid },		/* Grid layout */
-	{ NULL,		NULL },
+	{ NULL, NULL },
 };
 
 /* key definitions */
@@ -207,7 +220,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_bracketright,spawn,		SHCMD("mpc seek +10; spot-cli --seek +10") },
 	{ MODKEY|ShiftMask,		XK_bracketright,spawn,		SHCMD("mpc seek +60; spot-cli --seek +60") },
 	{ MODKEY,			XK_backslash,	view,		{0} },
-	{ MODKEY|ShiftMask,		XK_backslash,	setlayout,	{.v = &layouts[0]} },
+	{ MODKEY|ShiftMask,		XK_backslash,	setlayout,	{.v = &layouts[8]} },
 
 	{ MODKEY,			XK_a,		togglegaps,	{0} },
 	{ MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },
@@ -216,7 +229,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_d,		spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,		XK_d,		spawn,		SHCMD("dscg") },
 	{ MODKEY,			XK_f,		togglefullscr,	{0} },
-	{ MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[8]} },
+	{ MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[9]} },
 	{ MODKEY,			XK_g,		shiftview,	{ .i = -1 } },
 	{ MODKEY|ShiftMask,		XK_g,		shifttag,	{ .i = -1 } },
 	{ MODKEY,			XK_h,		setmfact,	{.f = -0.05} },

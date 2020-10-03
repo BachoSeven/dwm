@@ -113,6 +113,7 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
 #include "vanitygaps.c"
+#include "grid.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "",	spiral },		/* Deafult: Fibonacci spiral */
@@ -129,6 +130,7 @@ static const Layout layouts[] = {
 
 	{ "",	NULL },			/* no layout function means floating behavior */
 	{ NULL,		NULL },
+	{ "HHH",      grid },
 };
 
 /* key definitions */

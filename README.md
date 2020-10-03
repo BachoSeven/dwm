@@ -8,6 +8,7 @@ a part from keybindings and additional or different scratchpads/programs, I have
 - noborder (fixed for floating windows)
 - cool autostart
 - save floats (remembers floating windows' geometries)
+- grid mode (new layout)
 
 ## FAQ
 

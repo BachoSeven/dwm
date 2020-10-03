@@ -17,7 +17,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 8;        /* vertical padding of bar */
 static const int sidepad            = 8;        /* horizontal padding of bar */
-static const char *fonts[]          = { "monospace:size=18", "Noto Color Emoji:pixelsize=18:antialias=true:autohint=true" };
+static const char *fonts[]          = { "monospace:size=17", "Noto Color Emoji:pixelsize=17:antialias=true:autohint=true" };
 static char normfgcolor[]           = "#bbbbbb";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";

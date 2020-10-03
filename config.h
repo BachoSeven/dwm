@@ -77,8 +77,7 @@ static const char *const autostart[] = {
 
 /* tagging */
 static const char *tags[] = { "", "", "", "", "", "", "", "", "阮" };
-// 
-// 🎸
+
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
@@ -129,8 +128,8 @@ static const Layout layouts[] = {
 	{ "",	centeredfloatingmaster },	/* Same but master floats */
 
 	{ "",	NULL },			/* no layout function means floating behavior */
+	{ "ﱖ",      grid },		/* Grid layout */
 	{ NULL,		NULL },
-	{ "HHH",      grid },
 };
 
 /* key definitions */
@@ -144,10 +143,6 @@ static const Layout layouts[] = {
 	{ MOD,	XK_j,	ACTION##stack,	{.i = INC(+1) } }, \
 	{ MOD,	XK_k,	ACTION##stack,	{.i = INC(-1) } }, \
 	{ MOD,  XK_v,   ACTION##stack,  {.i = 0 } }, \
-	/* { MOD, XK_grave, ACTION##stack, {.i = PREVSEL } }, \ */
-	/* { MOD, XK_a,     ACTION##stack, {.i = 1 } }, \ */
-	/* { MOD, XK_z,     ACTION##stack, {.i = 2 } }, \ */
-	/* { MOD, XK_x,     ACTION##stack, {.i = -1 } }, */
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -212,7 +207,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_bracketright,spawn,		SHCMD("mpc seek +10; spot-cli --seek +10") },
 	{ MODKEY|ShiftMask,		XK_bracketright,spawn,		SHCMD("mpc seek +60; spot-cli --seek +60") },
 	{ MODKEY,			XK_backslash,	view,		{0} },
-	// { MODKEY|ShiftMask,		XK_backslash,	spawn,		SHCMD("") },
+	{ MODKEY|ShiftMask,		XK_backslash,	setlayout,	{.v = &layouts[0]} },
 
 	{ MODKEY,			XK_a,		togglegaps,	{0} },
 	{ MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },
@@ -230,8 +225,8 @@ static Key keys[] = {
 	{ MODKEY,			XK_l,		setmfact,      	{.f = +0.05} },
 	{ MODKEY,			XK_semicolon,	shiftview,	{ .i = 1 } },
 	{ MODKEY|ShiftMask,		XK_semicolon,	shifttag,	{ .i = 1 } },
-	// { MODKEY,			XK_apostrophe,	spawn,		SHCMD("") }, // do not work well with US_int_dead_keys...
-	/* { MODKEY|ShiftMask,		XK_apostrophe,	spawn,		SHCMD("") }, */
+	// { MODKEY,			XK_apostrophe,	spawn,		SHCMD("") }, //
+	// { MODKEY|ShiftMask,		XK_apostrophe,	spawn,		SHCMD("") }, //
 	{ MODKEY,			XK_Return,	spawn,		{.v = termcmd } },
 	{ MODKEY|ShiftMask,		XK_Return,	togglescratch,	{.ui = 0} },
 	{ MODKEY|ControlMask,		XK_Return,	spawn,		SHCMD("tabbed -c -r 2 st -w id") },
@@ -314,23 +309,6 @@ static Key keys[] = {
 	// { 0, XF86XK_TouchpadOn,		spawn,		SHCMD("synclient TouchpadOff=0") },
 	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("br inc 2") },
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("br dec 2") },
-
-	/* { MODKEY|Mod4Mask,              XK_h,      incrgaps,       {.i = +1 } }, */
-	/* { MODKEY|Mod4Mask,              XK_l,      incrgaps,       {.i = -1 } }, */
-	/* { MODKEY|Mod4Mask|ShiftMask,    XK_h,      incrogaps,      {.i = +1 } }, */
-	/* { MODKEY|Mod4Mask|ShiftMask,    XK_l,      incrogaps,      {.i = -1 } }, */
-	/* { MODKEY|Mod4Mask|ControlMask,  XK_h,      incrigaps,      {.i = +1 } }, */
-	/* { MODKEY|Mod4Mask|ControlMask,  XK_l,      incrigaps,      {.i = -1 } }, */
-	/* { MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} }, */
-	/* { MODKEY,                       XK_y,      incrihgaps,     {.i = +1 } }, */
-	/* { MODKEY,                       XK_o,      incrihgaps,     {.i = -1 } }, */
-	/* { MODKEY|ControlMask,           XK_y,      incrivgaps,     {.i = +1 } }, */
-	/* { MODKEY|ControlMask,           XK_o,      incrivgaps,     {.i = -1 } }, */
-	/* { MODKEY|Mod4Mask,              XK_y,      incrohgaps,     {.i = +1 } }, */
-	/* { MODKEY|Mod4Mask,              XK_o,      incrohgaps,     {.i = -1 } }, */
-	/* { MODKEY|ShiftMask,             XK_y,      incrovgaps,     {.i = +1 } }, */
-	/* { MODKEY|ShiftMask,             XK_o,      incrovgaps,     {.i = -1 } }, */
-
 };
 
 /* button definitions */

@@ -911,6 +911,13 @@ drawbar(Monitor *m)
 			urg |= c->tags;
 	}
 	x = 0;
+
+	/* Draw an arch logo...because why not (requires "Iosevka Nerd Font") */
+	w = TEXTW("");
+	drw_setscheme(drw, scheme[SchemeTagsSel]);
+	drw_text(drw, x, 0, w, bh, lrpad / 3, "", 1);
+	x = w;
+
 	for (i = 0; i < LENGTH(tags); i++) {
 		/* do not draw vacant tags */
 		if (!(occ & 1 << i || m->tagset[m->seltags] & 1 << i))

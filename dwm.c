@@ -912,7 +912,7 @@ drawbar(Monitor *m)
 	}
 	x = 0;
 
-	/* Draw an arch logo...because why not (requires "Iosevka Nerd Font") */
+	/* Draw an arch logo */
 	w = TEXTW("");
 	drw_setscheme(drw, scheme[SchemeInfoNorm]);
 	drw_text(drw, x, 0, w, bh, lrpad / 3, "", 1);

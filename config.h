@@ -85,8 +85,8 @@ static Sp scratchpads[] = {
 static const char *const autostart[] = {
 	"kitty", "--hold", "welcome", NULL,
 	TERMINAL, "-c", "sysMon", "-e", "btm", NULL,
-	"xdotool", "key", "F8", NULL,
-	NULL, /* terminate */
+	"xdotool", "key", "super+F8", NULL,
+	NULL /* terminate */
 };
 
 /* tagging */

@@ -17,7 +17,7 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static int vertpad            = 8;        /* vertical padding of bar */
 static int sidepad            = 8;        /* horizontal padding of bar */
-static char *fonts[]          = { "monospace:size=17", "Noto Color Emoji:pixelsize=17:antialias=true:autohint=true" };
+static char *fonts[]          = { "monospace:size=18", "Noto Color Emoji:pixelsize=17:antialias=true:autohint=true" };
 static char normfgcolor[]           = "#bbbbbb";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
@@ -84,7 +84,7 @@ static Sp scratchpads[] = {
 
 static const char *const autostart[] = {
 	TERMINAL, "-c", "sysMon", "-e", "btm", NULL,
-	"sh", "-c", "\"xdotool key super+F8\"", NULL,
+	"echo", "xdotool", "key", "super+F8|sh", "-s", NULL,
 	NULL /* terminate */
 };
 
@@ -150,7 +150,9 @@ static const Layout layouts[] = {
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} }, \
+	{ MODKEY|Mod1Mask,              KEY,      tagnextmon,     {.ui = 1 << TAG} }, \
+	{ MODKEY|Mod1Mask|ShiftMask,    KEY,      tagprevmon,     {.ui = 1 << TAG} },
 #define STACKKEYS(MOD,ACTION) \
 	{ MOD,	XK_j,	ACTION##stack,	{.i = INC(+1) } }, \
 	{ MOD,	XK_k,	ACTION##stack,	{.i = INC(-1) } }, \

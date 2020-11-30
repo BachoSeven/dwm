@@ -287,7 +287,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_z,		incrgaps,	{.i = +3 } },
 	{ MODKEY|ShiftMask,		XK_z,		togglescratch,	{.ui = 3} },
 	{ MODKEY,			XK_x,		incrgaps,	{.i = -3 } },
-	{ MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("Comptoggle") },
+	{ MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("togcomp") },
 	{ MODKEY|ShiftMask,		XK_c,		togglescratch,	{.ui = 1} },
 	// { MODKEY,			XK_c,		spawn,		SHCMD("") },
 	/* V is automatically bound above in STACKKEYS */

@@ -17,7 +17,7 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static int vertpad            = 8;        /* vertical padding of bar */
 static int sidepad            = 8;        /* horizontal padding of bar */
-static char *fonts[]          = { "monospace:size=18", "Noto Color Emoji:pixelsize=17:antialias=true:autohint=true" };
+static char *fonts[]          = { "monospace:size=17", "Noto Color Emoji:pixelsize=18:antialias=true:autohint=true" };
 static char normfgcolor[]           = "#bbbbbb";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
@@ -289,7 +289,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_x,		incrgaps,	{.i = -3 } },
 	{ MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("togcomp") },
 	{ MODKEY|ShiftMask,		XK_c,		togglescratch,	{.ui = 1} },
-	// { MODKEY,			XK_c,		spawn,		SHCMD("") },
+	// { MODKEY,			XK_c,		spawn,		SHCMD("") }, // This is used by `copyq`
 	/* V is automatically bound above in STACKKEYS */
 	{ MODKEY,			XK_b,		togglebar,	{0} },
 	{ MODKEY|ShiftMask,		XK_b,		togglescratch,	{.ui = 2} },

@@ -253,7 +253,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_i,		setlayout,	{.v = &layouts[7]} }, /* centeredfloatingmaster */
 	{ MODKEY,			XK_o,		incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,		XK_o,		incnmaster,     {.i = -1 } },
-	{ MODKEY,			XK_p,		spawn,		SHCMD("mpc toggle; spot-cli -t") },
+	{ MODKEY,			XK_p,		spawn,		SHCMD("spot-cli -t; mpc toggle") },
 	{ MODKEY|ShiftMask,		XK_p,		spawn,		SHCMD("mpc stop ; pauseallmpv; spot-cli -s") },
 	{ MODKEY,			XK_bracketleft,	spawn,		SHCMD("mpc seek -10; spot-cli --seek -10") },
 	{ MODKEY|ShiftMask,		XK_bracketleft,	spawn,		SHCMD("mpc seek -60; spot-cli --seek -60") },

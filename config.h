@@ -265,7 +265,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },
 	{ MODKEY,			XK_s,		togglesticky,	{0} },
 	{ MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("killall screenkey >/dev/null || screenkey &") },
-	{ MODKEY,			XK_d,		spawn,          SHCMD("dmenu_aliases") },
+	{ MODKEY,			XK_d,		spawn,          SHCMD("menu") },
 	{ MODKEY|ShiftMask,		XK_d,		spawn,		SHCMD("dscg") },
 	{ MODKEY,			XK_f,		togglefullscr,	{0} },
 	{ MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[9]} },

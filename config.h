@@ -18,27 +18,28 @@ static int topbar             = 1;        /* 0 means bottom bar */
 static int vertpad            = 8;        /* vertical padding of bar */
 static int sidepad            = 8;        /* horizontal padding of bar */
 static char *fonts[]          = { "monospace:size=16", "Noto Color Emoji:antialias=true:autohint=true" };
-static char normfgcolor[]           = "#bbbbbb";
-static char normbgcolor[]           = "#222222";
-static char normbordercolor[]       = "#444444";
-static char selfgcolor[]            = "#eeeeee";
-static char selbgcolor[]            = "#005577";
-static char selbordercolor[]        = "#770000";
-static char statusfg[]		    = "#ebdbb2";
-static char statusbg[]		    = "#282828";
-static char statusborder[]	    = "#1d2021";
-static char tagnormfg[]		    = "#ebdbb2";
-static char tagnormbg[]		    = "#282828";
-static char tagnormborder[]	    = "#1d2021";
-static char tagselfg[]		    = "#ebdbb2";
-static char tagselbg[]		    = "#005577";
-static char tagselborder[]	    = "#1d2021";
-static char infonormfg[]	    = "#ebdbb2";
-static char infonormbg[]	    = "#282828";
-static char infonormborder[]	    = "#1d2021";
-static char infoselfg[]		    = "#ebdbb2";
-static char infoselbg[]		    = "#005577";
-static char infoselborder[]	    = "#1d2021";
+static char normfgcolor[]		= "#bbbbbb";
+static char normbgcolor[]		= "#222222";
+static char normbordercolor[]		= "#444444";
+static char selfgcolor[]		= "#eeeeee";
+static char selbgcolor[]		= "#005577";
+static char selbordercolor[]		= "#770000";
+static char statusfg[]			= "#ebdbb2";
+static char statusbg[]			= "#282828";
+static char statusborder[]		= "#1d2021";
+static char tagnormfg[]			= "#ebdbb2";
+static char tagnormbg[]			= "#282828";
+static char tagnormborder[]		= "#1d2021";
+static char tagselfg[]			= "#ebdbb2";
+static char tagselbg[]			= "#005577";
+static char tagselborder[]		= "#1d2021";
+static char infonormfg[]		= "#ebdbb2";
+static char infonormbg[]		= "#282828";
+static char infonormborder[]		= "#1d2021";
+static char infoselfg[]			= "#ebdbb2";
+static char infoselbg[]			= "#005577";
+static char infoselborder[]		= "#1d2021";
+static char borderbar[]			= "#dd5555";
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 
@@ -54,7 +55,7 @@ static char *colors[][3] = {
 };
 
 static const unsigned int alphas[][3]      = {
-	/*               fg      bg        border     */
+	/*			fg      bg        border     */
 	[SchemeNorm]	 = { OPAQUE, baralpha, borderalpha },
 	[SchemeSel]  	 = { OPAQUE, baralpha, borderalpha },
 	[SchemeStatus]   = { OPAQUE, baralpha, borderalpha },
@@ -188,6 +189,7 @@ ResourcePref resources[] = {
 		{ "infoselfg",		STRING, &infoselfg},
 		{ "infoselbg",		STRING, &infoselbg},
 		{ "infoselborder",	STRING, &infoselborder},
+		{ "borderbar",		STRING, &borderbar},
 		{ "borderpx",		INTEGER, &borderpx },
 		{ "snap",		INTEGER, &snap },
 		{ "showbar",		INTEGER, &showbar },

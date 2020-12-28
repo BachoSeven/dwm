@@ -127,7 +127,7 @@ static int resizehints = 1;    /* 1 means respect size hints in tiled resizals *
 #include "grid.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "",	spiral },		/* Deafult: Fibonacci spiral */
+	{ "",	spiral },		/* Deafult: Fibonacci spiral */
 	{ "",	bstack },		/* Master on top, slaves on bottom */
 
  	{ "﬿",	tile },			/* Master on left, slaves on right */

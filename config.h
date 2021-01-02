@@ -103,12 +103,12 @@ static const Rule rules[] = {
 	{ "Scripting",		NULL,		NULL,			1 << 3,		0,		1,	0,	-1 },
 	{ "SoulseekQt",		NULL,		NULL,			1 << 5,         0,		1,	0,	-1 },
 	{ "ncspot",		NULL,   	NULL,			1 << 8,         0,		1,	0,	-1 },
-	{ "Spotify",		NULL,		NULL,			1 << 8,         0,		0,	0,	-1 },
+	{ "Spotify",		NULL,		NULL,			1 << 8,         0,		0,	0,	-1 }, // spotify class after startup
+	{ NULL,			NULL,		"broken",	        1 << 8,         0,		0,	0,	-1 }, // spotify startup
 	{ "ncmpcpp",		NULL,   	NULL,			1 << 8,         0,		1,	0,	-1 },
 	{ "Zathura",		NULL,   	NULL,			0,              0,		0,	1,	-1 },
 	{ "copyq",		NULL,   	NULL,			0,              1,		0,	0,	-1 },
 	{ "Dragon-drag-and-drop",NULL,		NULL,			0,              1,		0,	1,	-1 },
-	{ NULL,			NULL,		"broken",	        1 << 8,         0,		0,	0,	-1 },
 	{ NULL,			NULL,   	"Event Tester",   	0,		0,		0,	1,	-1 }, // Xev
         { NULL,			"Kunst",	NULL,             	1 << 8,         1,		0,	0,	-1 },
 	{ NULL,			"spterm",	NULL,       	   	SPTAG(0),       1,		1,	0,	-1 },

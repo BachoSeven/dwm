@@ -103,8 +103,7 @@ static const Rule rules[] = {
 	{ "Scripting",		NULL,		NULL,			1 << 3,		0,		1,	0,	-1 },
 	{ "SoulseekQt",		NULL,		NULL,			1 << 5,         0,		1,	0,	-1 },
 	{ "ncspot",		NULL,   	NULL,			1 << 8,         0,		1,	0,	-1 },
-	{ "Spotify",		NULL,		NULL,			1 << 8,         0,		0,	0,	-1 }, // spotify class after startup
-	{ NULL,			NULL,		"broken",	        1 << 8,         0,		0,	0,	-1 }, // spotify startup
+	{ "Spotify",		NULL,		NULL,			1 << 8,         0,		0,	0,	-1 }, // this actualy works, thanks to https://github.com/dasJ/spotifywm
 	{ "ncmpcpp",		NULL,   	NULL,			1 << 8,         0,		1,	0,	-1 },
 	{ "Zathura",		NULL,   	NULL,			0,              0,		0,	1,	-1 },
 	{ "copyq",		NULL,   	NULL,			0,              1,		0,	0,	-1 },

@@ -236,7 +236,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("xdotool key Caps_Lock") },
 	{ MODKEY,			XK_q,		killclient,	{0} },
 	{ MODKEY|ShiftMask,		XK_q,		spawn,		SHCMD("sysact") },
-	{ MODKEY,			XK_w,		spawn,		SHCMD("$BROWSER --app=file://$HOME/.config/browser/startpage/index.html") },
+	{ MODKEY,			XK_w,		spawn,		SHCMD("vieb") },
 	{ MODKEY,			XK_n,		spawn,		SHCMD("$BROWSER") },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("killall nmtui-connect >/dev/null || st -e nmtui-connect") },
 	{ MODKEY,			XK_e,		spawn,		SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks") },
@@ -317,6 +317,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_F3,		spawn,		SHCMD("displayselect") },
 	{ MODKEY,			XK_F4,		spawn,		SHCMD(TERMINAL " -e ncpamixer; kill -44 $(pidof dwmblocks)") },
 	// { MODKEY,			XK_F5,		spawn,		SHCMD(""), },
+nmap o <action.toExploreMode>
 	{ MODKEY,			XK_F6,		spawn,		SHCMD("torwrap") },
 	{ MODKEY,			XK_F7,		spawn,		SHCMD("td-toggle") },
 	{ MODKEY,			XK_F8,		spawn,		SHCMD("mw -Y") },

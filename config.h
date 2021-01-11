@@ -99,6 +99,7 @@ static const Rule rules[] = {
 	/* class    		instance    	title			tags mask	isfloating   isterminal noswallow  monitor */
 	{ TERMCLASS,		NULL,		NULL,			0,              0,		1,	0,	-1 },
 	{ "Chromium",		NULL,		NULL,			1 << 0,         0,		0,	1,	-1 },
+	{ "Vieb",		NULL,		NULL,			1 << 0,         0,		0,	1,	-1 },
 	{ "sysMon",		NULL,		NULL,			1 << 1,		0,		1,	0,	-1 },
 	{ "Scripting",		NULL,		NULL,			1 << 3,		0,		1,	0,	-1 },
 	{ "SoulseekQt",		NULL,		NULL,			1 << 5,         0,		1,	0,	-1 },

@@ -108,7 +108,7 @@ static const Rule rules[] = {
 	{ "ncmpcpp",		NULL,   	NULL,			1 << 8,         0,		1,	0,	-1,	 	0,0},
 	{ "Zathura",		NULL,   	NULL,			0,              0,		0,	1,	-1,	 	0,0},
 	{ "copyq",		NULL,   	NULL,			0,              1,		0,	0,	-1,	 	0,0},
-	{ "Dragon-drag-and-drop",NULL,		NULL,			0,              1,		0,	1,	-1,	 	50,50},
+	{ "Dragon-drag-and-drop",NULL,		NULL,			0,              1,		0,	1,	-1,	 	100,100},
 	{ NULL,			NULL,   	"Event Tester",   	0,		0,		0,	1,	-1,	 	0,0}, // Xev
         { NULL,			"Kunst",	NULL,             	1 << 8,         1,		0,	0,	-1,	 	0,0},
 	{ NULL,			"spterm",	NULL,       	   	SPTAG(0),       1,		1,	0,	-1,	 	0,0},

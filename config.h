@@ -40,7 +40,7 @@ static char infoselfg[]			= "#ebdbb2";
 static char infoselbg[]			= "#005577";
 static char infoselborder[]		= "#1d2021";
 static char borderbar[]			= "#dd5555";
-static const unsigned int baralpha = 0xd0;
+static const unsigned int baralpha = 0xe0; // 88% transparency (224/255 in decimal)
 static const unsigned int borderalpha = OPAQUE;
 
 static char *colors[][3] = {
@@ -212,7 +212,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	STACKKEYS(MODKEY,                          focus)
 	STACKKEYS(MODKEY|ShiftMask,                push)
-	/* { MODKEY|ShiftMask,		XK_Escape,	spawn,	SHCMD("") }, */
+	// { MODKEY|ShiftMask,		XK_Escape,	spawn,	SHCMD("") }, // This is used by keepassxc
 	{ MODKEY,			XK_grave,	spawn,	SHCMD("dmenuunicode") },
 	{ MODKEY|ShiftMask,		XK_grave,	spawn,	SHCMD("dmoji") },
 	TAGKEYS(			XK_1,		0)

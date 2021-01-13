@@ -96,26 +96,26 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	*/
-	/* class    		instance    	title			tags mask	isfloating   isterminal noswallow  monitor */
-	{ TERMCLASS,		NULL,		NULL,			0,              0,		1,	0,	-1 },
-	{ "Chromium",		NULL,		NULL,			1 << 0,         0,		0,	1,	-1 },
-	{ "Vieb",		NULL,		NULL,			1 << 0,         0,		0,	1,	-1 },
-	{ "sysMon",		NULL,		NULL,			1 << 1,		0,		1,	0,	-1 },
-	{ "Scripting",		NULL,		NULL,			1 << 3,		0,		1,	0,	-1 },
-	{ "SoulseekQt",		NULL,		NULL,			1 << 5,         0,		1,	0,	-1 },
-	{ "ncspot",		NULL,   	NULL,			1 << 8,         0,		1,	0,	-1 },
-	{ "Spotify",		NULL,		NULL,			1 << 8,         0,		0,	0,	-1 }, // this actualy works, thanks to https://github.com/dasJ/spotifywm
-	{ "ncmpcpp",		NULL,   	NULL,			1 << 8,         0,		1,	0,	-1 },
-	{ "Zathura",		NULL,   	NULL,			0,              0,		0,	1,	-1 },
-	{ "copyq",		NULL,   	NULL,			0,              1,		0,	0,	-1 },
-	{ "Dragon-drag-and-drop",NULL,		NULL,			0,              1,		0,	1,	-1 },
-	{ NULL,			NULL,   	"Event Tester",   	0,		0,		0,	1,	-1 }, // Xev
-        { NULL,			"Kunst",	NULL,             	1 << 8,         1,		0,	0,	-1 },
-	{ NULL,			"spterm",	NULL,       	   	SPTAG(0),       1,		1,	0,	-1 },
-	{ NULL,			"spcalc",	NULL,       	   	SPTAG(1),       1,		1,	0,	-1 },
-	{ NULL,			"spbm",		NULL,       	   	SPTAG(2),       1,		1,	0,	-1 },
-	{ NULL,			"spkp",		NULL,       	   	SPTAG(3),       1,		1,	0,	-1 },
-	{ NULL,			"sphist",	NULL,       	   	SPTAG(4),       1,		1,	0,	-1 },
+	/* class    		instance    	title			tags mask	isfloating isterminal noswallow  monitor  float x,y */
+	{ TERMCLASS,		NULL,		NULL,			0,              0,		1,	0,	-1,	 	0,0},
+	{ "Chromium",		NULL,		NULL,			1 << 0,         0,		0,	1,	-1,	 	0,0},
+	{ "Vieb",		NULL,		NULL,			1 << 0,         0,		0,	1,	-1,	 	0,0},
+	{ "sysMon",		NULL,		NULL,			1 << 1,		0,		1,	0,	-1,	 	0,0},
+	{ "Scripting",		NULL,		NULL,			1 << 3,		0,		1,	0,	-1,	 	0,0},
+	{ "SoulseekQt",		NULL,		NULL,			1 << 5,         0,		1,	0,	-1,	 	0,0},
+	{ "ncspot",		NULL,   	NULL,			1 << 8,         0,		1,	0,	-1,	 	0,0},
+	{ "Spotify",		NULL,		NULL,			1 << 8,         0,		0,	0,	-1,	 	0,0}, // this actualy works, thanks to https://github.com/dasJ/spotifywm
+	{ "ncmpcpp",		NULL,   	NULL,			1 << 8,         0,		1,	0,	-1,	 	0,0},
+	{ "Zathura",		NULL,   	NULL,			0,              0,		0,	1,	-1,	 	0,0},
+	{ "copyq",		NULL,   	NULL,			0,              1,		0,	0,	-1,	 	0,0},
+	{ "Dragon-drag-and-drop",NULL,		NULL,			0,              1,		0,	1,	-1,	 	50,50},
+	{ NULL,			NULL,   	"Event Tester",   	0,		0,		0,	1,	-1,	 	0,0}, // Xev
+        { NULL,			"Kunst",	NULL,             	1 << 8,         1,		0,	0,	-1,	 	0,0},
+	{ NULL,			"spterm",	NULL,       	   	SPTAG(0),       1,		1,	0,	-1,	 	0,0},
+	{ NULL,			"spcalc",	NULL,       	   	SPTAG(1),       1,		1,	0,	-1,	 	0,0},
+	{ NULL,			"spbm",		NULL,       	   	SPTAG(2),       1,		1,	0,	-1,	 	0,0},
+	{ NULL,			"spkp",		NULL,       	   	SPTAG(3),       1,		1,	0,	-1,	 	0,0},
+	{ NULL,			"sphist",	NULL,       	   	SPTAG(4),       1,		1,	0,	-1,	 	0,0},
 };
 
 /* layout(s) */

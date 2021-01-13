@@ -107,7 +107,7 @@ struct Client {
 	int basew, baseh, incw, inch, maxw, maxh, minw, minh;
 	int bw, oldbw;
 	unsigned int tags;
-	int isfixed,isfloating, isurgent, neverfocus, oldstate, isfullscreen, isterminal, noswallow, issticky;
+	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen, isterminal, noswallow, issticky;
 	pid_t pid;
 	Client *next;
 	Client *snext;
@@ -162,6 +162,7 @@ typedef struct {
 	int isterminal;
 	int noswallow;
 	int monitor;
+	int floatx, floaty; // Personal floatrules(xy) patch
 } Rule;
 
 /* Xresources preferences */
@@ -405,9 +406,14 @@ applyrules(Client *c)
 			c->isfloating = r->isfloating;
 			c->noswallow  = r->noswallow;
 			c->tags |= r->tags;
-			if ((r->tags & SPTAGMASK) && r->isfloating) {
-				c->x = c->mon->wx + (c->mon->ww / 2 - WIDTH(c) / 2);
-				c->y = c->mon->wy + (c->mon->wh / 2 - HEIGHT(c) / 2);
+			if (r->isfloating) {
+				if (r->tags & SPTAGMASK) {
+					c->x = c->mon->wx + (c->mon->ww / 2 - WIDTH(c) / 2);
+					c->y = c->mon->wy + (c->mon->wh / 2 - HEIGHT(c) / 2);
+				} else {
+					c->x = c->mon->wx + r->floatx;  // Personal floatrules(xy) patch
+					c->y = c->mon->wy + r->floaty;  //
+				}
 			}
 
 			for (m = mons; m && m->num != r->monitor; m = m->next);

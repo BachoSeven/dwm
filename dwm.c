@@ -411,8 +411,8 @@ applyrules(Client *c)
 					c->x = c->mon->wx + (c->mon->ww / 2 - WIDTH(c) / 2);
 					c->y = c->mon->wy + (c->mon->wh / 2 - HEIGHT(c) / 2);
 				} else {
-					c->x = c->mon->wx + r->floatx;  // Personal floatrules(xy) patch
-					c->y = c->mon->wy + r->floaty;  //
+					c->x += r->floatx;  // Personal floatrules(xy) patch
+					c->y += r->floaty;
 				}
 			}
 

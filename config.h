@@ -84,7 +84,7 @@ static Sp scratchpads[] = {
 };
 
 static const char *const autostart[] = {
-	TERMINAL, "-c", "welcome", NULL,
+	TERMINAL, "-e", "welcome", NULL,
 	TERMINAL, "-c", "sysMon", "-e", "btm", NULL,
 	NULL /* terminate */
 };

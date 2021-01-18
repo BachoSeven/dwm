@@ -107,6 +107,7 @@ static const Rule rules[] = {
 	{ "ncspot",		NULL,   	NULL,			1 << 8,         0,		1,	0,	-1,	 	0,0},
 	{ "Spotify",		NULL,		NULL,			1 << 8,         0,		0,	0,	-1,	 	0,0}, // this actualy works, thanks to https://github.com/dasJ/spotifywm
 	{ "ncmpcpp",		NULL,   	NULL,			1 << 8,         0,		1,	0,	-1,	 	0,0},
+	{ "Primephonic",	NULL,		NULL,			1 << 8,         0,		0,	1,	-1,	 	0,0},
 	{ "Zathura",		NULL,   	NULL,			0,              0,		0,	1,	-1,	 	0,0},
 	{ "copyq",		NULL,   	NULL,			0,              1,		0,	0,	-1,	 	0,0},
 	{ "Dragon-drag-and-drop",NULL,		NULL,			0,              1,		0,	1,	-1,	 	100,100},

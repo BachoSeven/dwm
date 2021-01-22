@@ -297,7 +297,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_b,		togglebar,	{0} },
 	{ MODKEY|ShiftMask,		XK_b,		togglescratch,	{.ui = 2} },
 	{ MODKEY|ShiftMask,		XK_n,		spawn,		SHCMD(TERMINAL " -e newsboat") },
-	{ MODKEY,			XK_m,		spawn,		SHCMD("setsid -f st -c ncmpcpp -e ncmpcpp; kunst --silent") },
+	{ MODKEY,			XK_m,		spawn,		SHCMD("setsid -f st -c ncmpcpp -e ncmpcpp -s browser -S visualizer; kunst --silent") },
 	{ MODKEY|ShiftMask,		XK_m,		spawn,		SHCMD("vol toggle; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_comma,	spawn,		SHCMD("mpc prev; spot-cli -p >/dev/null") },
 	{ MODKEY|ShiftMask,		XK_comma,	spawn,		SHCMD("mpc seek 0%; spot-cli --set 0") },

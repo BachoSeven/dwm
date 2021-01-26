@@ -103,7 +103,8 @@ static const Rule rules[] = {
 	{ "Vieb",		NULL,		NULL,			1 << 0,         0,		0,	1,	-1,	 	0,0},
 	{ "sysMon",		NULL,		NULL,			1 << 1,		0,		1,	0,	-1,	 	0,0},
 	{ "Scripting",		NULL,		NULL,			1 << 3,		0,		1,	0,	-1,	 	0,0},
-	{ "SoulseekQt",		NULL,		NULL,			1 << 5,         0,		1,	0,	-1,	 	0,0},
+	{ "SoulseekQt",		NULL,		NULL,			1 << 5,         0,		0,	0,	-1,	 	0,0},
+	{ "qBittorrent",	NULL,		NULL,			1 << 6,         0,		0,	0,	-1,	 	0,0},
 	{ "ncspot",		NULL,   	NULL,			1 << 8,         0,		1,	0,	-1,	 	0,0},
 	{ "Spotify",		NULL,		NULL,			1 << 8,         0,		0,	0,	-1,	 	0,0}, // this actualy works, thanks to https://github.com/dasJ/spotifywm
 	{ "ncmpcpp",		NULL,   	NULL,			1 << 8,         0,		1,	0,	-1,	 	0,0},

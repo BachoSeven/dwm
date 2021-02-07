@@ -97,29 +97,30 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	*/
-	/* class    		instance    	title			tags mask	isfloating isterminal noswallow  monitor  float x,y */
-	{ TERMCLASS,		NULL,		NULL,			0,              0,		1,	0,	-1,	 	0,0},
-	{ "Chromium",		NULL,		NULL,			1 << 0,         0,		0,	1,	-1,	 	0,0},
-	{ "Vieb",		NULL,		NULL,			1 << 0,         0,		0,	1,	-1,	 	0,0},
-	{ "sysMon",		NULL,		NULL,			1 << 1,		0,		1,	0,	-1,	 	0,0},
-	{ "Scripting",		NULL,		NULL,			1 << 3,		0,		1,	0,	-1,	 	0,0},
-	{ "Nicotine",		NULL,		NULL,			1 << 5,         0,		0,	0,	-1,	 	0,0},
-	{ "SoulseekQt",		NULL,		NULL,			1 << 5,         0,		0,	0,	-1,	 	0,0},
-	{ "qBittorrent",	NULL,		NULL,			1 << 6,         0,		0,	0,	-1,	 	0,0},
-	{ "ncspot",		NULL,   	NULL,			1 << 8,         0,		1,	0,	-1,	 	0,0},
-	{ "Spotify",		NULL,		NULL,			1 << 8,         0,		0,	0,	-1,	 	0,0}, // this actualy works, thanks to https://github.com/dasJ/spotifywm
-	{ "ncmpcpp",		NULL,   	NULL,			1 << 8,         0,		1,	0,	-1,	 	0,0},
-	{ "Primephonic",	NULL,		NULL,			1 << 8,         0,		0,	1,	-1,	 	0,0},
-	{ "Zathura",		NULL,   	NULL,			0,              0,		0,	1,	-1,	 	0,0},
-	{ "copyq",		NULL,   	NULL,			0,              1,		0,	0,	-1,	 	0,0},
-	{ "Dragon-drag-and-drop",NULL,		NULL,			0,              1,		0,	1,	-1,	 	100,100},
-	{ NULL,			NULL,   	"Event Tester",   	0,		0,		0,	1,	-1,	 	0,0}, // Xev
-        { NULL,			"Kunst",	NULL,             	1 << 8,         1,		0,	0,	-1,	 	0,0},
-	{ NULL,			"spterm",	NULL,       	   	SPTAG(0),       1,		1,	0,	-1,	 	0,0},
-	{ NULL,			"spcalc",	NULL,       	   	SPTAG(1),       1,		1,	0,	-1,	 	0,0},
-	{ NULL,			"spbm",		NULL,       	   	SPTAG(2),       1,		1,	0,	-1,	 	0,0},
-	{ NULL,			"spkp",		NULL,       	   	SPTAG(3),       1,		1,	0,	-1,	 	0,0},
-	{ NULL,			"sphist",	NULL,       	   	SPTAG(4),       1,		1,	0,	-1,	 	0,0},
+	/* class    		instance    	title		tags mask    isfloating isterminal noswallow  monitor float x,y */
+	{ TERMCLASS,		NULL,		NULL,		0,              0,		1,	0,	-1,  	0,0},
+	{ "TelegramDesktop",	NULL,		NULL,		0,              0,		0,	1,	-1,  	0,0},
+	{ "Chromium",		NULL,		NULL,		1 << 0,         0,		0,	1,	-1,  	0,0},
+	{ "Vieb",		NULL,		NULL,		1 << 0,         0,		0,	1,	-1,  	0,0},
+	{ "sysMon",		NULL,		NULL,		1 << 1,		0,		1,	0,	-1,  	0,0},
+	{ "Scripting",		NULL,		NULL,		1 << 3,		0,		1,	0,	-1,  	0,0},
+	{ "Nicotine",		NULL,		NULL,		1 << 5,         0,		0,	0,	-1,  	0,0},
+	{ "SoulseekQt",		NULL,		NULL,		1 << 5,         0,		0,	0,	-1,  	0,0},
+	{ "qBittorrent",	NULL,		NULL,		1 << 6,         0,		0,	0,	-1,  	0,0},
+	{ "ncspot",		NULL,   	NULL,		1 << 8,         0,		1,	0,	-1,  	0,0},
+	{ "Spotify",		NULL,		NULL,		1 << 8,         0,		0,	0,	-1,  	0,0}, // this actualy works, thanks to https://github.com/dasJ/spotifywm
+	{ "ncmpcpp",		NULL,   	NULL,		1 << 8,         0,		1,	0,	-1,  	0,0},
+	{ "Primephonic",	NULL,		NULL,		1 << 8,         0,		0,	1,	-1,  	0,0},
+	{ "Zathura",		NULL,   	NULL,		0,              0,		0,	1,	-1,  	0,0},
+	{ "copyq",		NULL,   	NULL,		0,              1,		0,	0,	-1,  	0,0},
+	{ "Dragon-drag-and-drop",NULL,		NULL,		0,              1,		0,	1,	-1,  	100,100},
+	{ NULL,			NULL,   	"Event Tester", 0,		0,		0,	1,	-1,  	0,0}, // Xev
+	{ NULL,			"Kunst",	NULL,           1 << 8,         1,		0,	0,	-1,  	0,0},
+	{ NULL,			"spterm",	NULL,       	SPTAG(0),       1,		1,	0,	-1,  	0,0},
+	{ NULL,			"spcalc",	NULL,       	SPTAG(1),       1,		1,	0,	-1,  	0,0},
+	{ NULL,			"spbm",		NULL,       	SPTAG(2),       1,		1,	0,	-1,  	0,0},
+	{ NULL,			"spkp",		NULL,       	SPTAG(3),       1,		1,	0,	-1,  	0,0},
+	{ NULL,			"sphist",	NULL,       	SPTAG(4),       1,		1,	0,	-1,  	0,0},
 };
 
 /* layout(s) */
@@ -299,7 +300,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_b,		togglebar,	{0} },
 	{ MODKEY|ShiftMask,		XK_b,		togglescratch,	{.ui = 2} },
 	{ MODKEY|ShiftMask,		XK_n,		spawn,		SHCMD(TERMINAL " -e newsboat") },
-	{ MODKEY,			XK_m,		spawn,		SHCMD("setsid -f st -c ncmpcpp -e ncmpcpp -s browser -S visualizer; kunst --silent") },
+	{ MODKEY,			XK_m,		spawn,		SHCMD("setsid -f st -c ncmpcpp -e ncmpcpp -s playlist -S visualizer; kunst --silent") },
 	{ MODKEY|ShiftMask,		XK_m,		spawn,		SHCMD("vol toggle; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_comma,	spawn,		SHCMD("mpc prev; spot-cli -p >/dev/null") },
 	{ MODKEY|ShiftMask,		XK_comma,	spawn,		SHCMD("mpc seek 0%; spot-cli --set 0") },
@@ -320,8 +321,8 @@ static Key keys[] = {
 	{ MODKEY,			XK_F1,		spawn,		SHCMD("mpc pause && mpc toggleoutput MPD && mpc toggleoutput MPD && mpc play") },
 	{ MODKEY,			XK_F2,		spawn,		SHCMD("connectHeadphones") },
 	{ MODKEY,			XK_F3,		spawn,		SHCMD("displayselect") },
-	{ MODKEY,			XK_F4,		spawn,		SHCMD(TERMINAL " -e ncpamixer; kill -44 $(pidof dwmblocks)") },
-	// { MODKEY,			XK_F5,		spawn,		SHCMD(""), },
+	{ MODKEY,			XK_F4,		spawn,		SHCMD(TERMINAL " -e pulsemixer; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY,			XK_F5,		livexres,	{.v = NULL } },
 	{ MODKEY,			XK_F6,		spawn,		SHCMD("torwrap") },
 	{ MODKEY,			XK_F7,		spawn,		SHCMD("qbtoggle") },
 	{ MODKEY,			XK_F8,		spawn,		SHCMD("mw -Y") },

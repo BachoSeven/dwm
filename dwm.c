@@ -290,6 +290,7 @@ static void zoom(const Arg *arg);
 static void autostart_exec(void);
 static void load_xresources(void);
 static void resource_load(XrmDatabase db, char *name, enum resource_type rtype, void *dst);
+static void livexres(const Arg *arg); // Live xresources reload
 
 static pid_t getparentprocess(pid_t p);
 static int isdescprocess(pid_t p, pid_t c);
@@ -619,7 +620,7 @@ buttonpress(XEvent *e)
 			arg.ui = 1 << i;
 		} else if (ev->x < x + blw)
 			click = ClkLtSymbol;
-		else if (ev->x > (x = selmon->ww - TEXTW(stext) + lrpad)) {
+		else if (ev->x > (x = selmon->ww - (int)TEXTW(stext) + lrpad - 2 * sp)) { // Trying to make bar padding compatible with statuscmd
 			click = ClkStatusText;
 
 			char *text = rawstext;
@@ -2765,6 +2766,21 @@ load_xresources(void)
 	XCloseDisplay(display);
 }
 
+void
+livexres(const Arg *arg)
+{
+	load_xresources();
+
+	unsigned int i;
+
+	for (i = 0; i < LENGTH(colors); i++)
+	    	scheme[i] = drw_scm_create(drw, colors[i], alphas[i], 3);
+	drw_clr_create(drw, &clrborder, borderbar, borderalpha);
+
+	focus(NULL);
+	arrange(NULL);
+}
+
 int
 main(int argc, char *argv[])
 {
@@ -2795,4 +2811,3 @@ main(int argc, char *argv[])
 	XCloseDisplay(dpy);
 	return EXIT_SUCCESS;
 }
-

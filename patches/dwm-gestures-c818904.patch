@@ -1,0 +1,132 @@
+Index: config.def.h
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- config.def.h	(revision cb3f58ad06993f7ef3a7d8f61468012e2b786cab)
++++ config.def.h	(revision c818904c9c736cb2d1e0f6b9b55bdc7a8580784b)
+@@ -59,6 +59,18 @@
+ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+ static const char *termcmd[]  = { "st", NULL };
+ 
++//may want to reuse the architecture present in buttons[] and keys[]
++static Gesture gestures[] = {
++        {"dl", spawn, SHCMD("")},
++        {"dr", spawn, SHCMD("")},
++        {"l",  spawn, SHCMD("")},
++        {"ld", spawn, SHCMD("")},
++        {"lr", spawn, SHCMD("")},
++        {"r",  spawn, SHCMD("firefox")},
++        {"rl", spawn, SHCMD("pavucontrol")},
++        {"du", spawn, SHCMD("st")},
++};
++
+ static Key keys[] = {
+ 	/* modifier                     key        function        argument */
+ 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+@@ -111,5 +123,6 @@
+ 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
+ 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
+ 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
++    { ClkWinTitle,          0,              Button3,        startgesture,   {0} },
+ };
+ 
+Index: dwm.c
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- dwm.c	(revision cb3f58ad06993f7ef3a7d8f61468012e2b786cab)
++++ dwm.c	(revision c818904c9c736cb2d1e0f6b9b55bdc7a8580784b)
+@@ -82,6 +82,12 @@
+ 	const Arg arg;
+ } Button;
+ 
++typedef struct {
++ 	char *name;
++ 	void (*func)(const Arg *arg);
++ 	const Arg arg;
++} Gesture;
++
+ typedef struct Monitor Monitor;
+ typedef struct Client Client;
+ struct Client {
+@@ -235,6 +241,7 @@
+ static void zoom(const Arg *arg);
+ 
+ /* variables */
++static void startgesture(const Arg *arg);
+ static const char broken[] = "broken";
+ static char stext[256];
+ static int screen;
+@@ -1344,6 +1351,69 @@
+ 	}
+ }
+ 
++void
++startgesture(const Arg *arg) {
++     	int x, y, dx, dy, q;
++     	int valid=0, listpos=0, gestpos=0, count=0;
++     	char move, currGest[10];
++     	XEvent ev;
++
++     	if(XGrabPointer(dpy, root, False, MOUSEMASK, GrabModeAsync, GrabModeAsync,
++             		None, cursor[CurMove]->cursor, CurrentTime) != GrabSuccess)
++     		return;
++     	if(!getrootptr(&x, &y))
++     		return;
++     	do {
++         		XMaskEvent(dpy, MOUSEMASK|ExposureMask|SubstructureRedirectMask, &ev);
++         		switch (ev.type)
++         		{
++             			case ConfigureRequest:
++                 			case Expose:
++                 			case MapRequest:
++                 				handler[ev.type](&ev);
++                 				break;
++                 			case MotionNotify:
++                				if(count++ < 10)
++                 					break;
++                 				count = 0;
++                 				dx = ev.xmotion.x - x;
++                 				dy = ev.xmotion.y - y;
++                 				x = ev.xmotion.x;
++                 				y = ev.xmotion.y;
++
++                 				if( abs(dx)/(abs(dy)+1) == 0 )
++                 					move = dy<0?'u':'d';
++                 				else
++                 					move = dx<0?'l':'r';
++
++                 		if(move!=currGest[gestpos-1])
++                 		{
++             					if(gestpos>9)
++             					{	ev.type++;
++             					    break;
++             					}
++
++             					currGest[gestpos] = move;
++             					currGest[++gestpos] = '\0';
++
++             					valid = 0;
++             					for(q = 0; q<LENGTH(gestures); q++)
++             					{	if(!strcmp(currGest, gestures[q].name))
++                						{
++             					            valid++;
++             					            listpos = q;
++                     					}
++             					}
++                 		}
++         		}
++        } while(ev.type != ButtonRelease);
++
++     if(valid)
++         gestures[listpos].func(&(gestures[listpos].arg));
++
++ 	XUngrabPointer(dpy, CurrentTime);
++}
++
+ void
+ restack(Monitor *m)
+ {
+

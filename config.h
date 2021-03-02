@@ -414,6 +414,8 @@ static Button buttons[] = {
 	{ ClkTagBar,		0,		Button4,	shiftview,	{.i = -1} },
 	{ ClkTagBar,		0,		Button5,	shiftview,	{.i = 1} },
 	{ ClkRootWin,		0,		Button2,	togglebar,	{0} },
+	{ ClkRootWin,		0,		8,	shiftview,	{.i = -1} },
+	{ ClkRootWin,		0,		9,	shiftview,	{.i = 1} },
 	{ ClkRootWin,           0,              Button3,        spawn,          SHCMD("xm") },
 	{ ClkRootWin,          	MODKEY,         Button3,        startgesture,   {0} },
 };

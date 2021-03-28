@@ -19,8 +19,8 @@ static int swallowfloating    = 0;        /* 1 means swallow floating windows by
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static int vertpad            = 8;        /* vertical padding of bar */
-static int sidepad            = 8;        /* horizontal padding of bar */
+static int vertpad            = 10;        /* vertical padding of bar */
+static int sidepad            = 10;        /* horizontal padding of bar */
 static char *fonts[]          = { "monospace:size=16", "Noto Color Emoji:antialias=true:autohint=true", "Sarasa Mono K:size=16:antialias=true:autohint=true" };
 static char normfgcolor[]		= "#bbbbbb";
 static char normbgcolor[]		= "#222222";
@@ -119,6 +119,7 @@ static const Rule rules[] = {
 	{ "copyq",		NULL,   	NULL,		0,              1,		0,	0,	-1,  	0,0},
 	{ "Dragon-drag-and-drop",NULL,		NULL,		0,              1,		0,	1,	-1,  	100,100},
 	{ NULL,			NULL,   	"Event Tester", 0,		0,		0,	1,	-1,  	0,0}, // Xev
+	// { NULL,			NULL,   	"SafeEyes-0",	0,		1,		0,	1,	0,  	0,0},
 	{ NULL,			"Kunst",	NULL,           1 << 8,         1,		0,	0,	-1,  	0,0},
 	{ NULL,			"spterm",	NULL,       	SPTAG(0),       1,		1,	0,	-1,  	0,0},
 	{ NULL,			"spcalc",	NULL,       	SPTAG(1),       1,		1,	0,	-1,  	0,0},
@@ -137,10 +138,10 @@ static int resizehints = 0;    /* 1 means respect size hints in tiled resizals *
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "",	spiral },		/* Deafult: Fibonacci spiral */
-	{ "",	bstack },		/* Master on top, slaves on bottom */
+	{ "侀",	dwindle },		/* Decreasing in size right and leftward */
 
  	{ "﬿",	tile },			/* Master on left, slaves on right */
-	{ "侀",	dwindle },		/* Decreasing in size right and leftward */
+	{ "",	bstack },		/* Master on top, slaves on bottom */
 
 	{ "",	deck },			/* Master on left, slaves in monocle-like mode on right */
  	{ "",	monocle },		/* All windows on top of eachother */

@@ -9,6 +9,7 @@ a part from keybindings and additional or different scratchpads/programs, I have
 - cool autostart
 - save floats (remembers floating windows' geometries)
 - grid mode (new layout)
+- resizepoint (stabler and more intuitive resizing)
 
 ## FAQ
 

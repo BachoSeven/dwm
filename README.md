@@ -6,8 +6,14 @@ a part from keybindings and additional or different scratchpads/programs, I have
 - barpadding :)
 - colorbar for colors in titles and tag indicators
 - noborder (fixed for floating windows)
+- borderbar
+- alpha (bar transparency)
 - cool autostart
 - save floats (remembers floating windows' geometries)
+- float rules
+- gestures (for the touchpad)
+- noborderfloatingfix
+- tagothermonitor (bindings to move windows between monitors)
 - grid mode (new layout)
 - resizepoint (stabler and more intuitive resizing)
 

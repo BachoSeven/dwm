@@ -75,9 +75,9 @@ typedef struct {
 } Sp;
 const char *spcmd1[] = {TERMINAL, "-n", "spterm", "-g", "120x35", NULL };
 const char *spcmd2[] = {TERMINAL, "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-e", "bc", "-lq", NULL };
-const char *spcmd3[] = {TERMINAL, "-n", "spbm", "-g", "135x35", "-e", "bm", "popup", NULL };
-const char *spcmd4[] = {TERMINAL, "-n", "spkp", "-g", "120x40", "-e", "keepassxc", NULL };
-const char *spcmd5[] = {TERMINAL, "-n", "sphist", "-g", "145x40", "-e", "hi", "popup", NULL };
+const char *spcmd3[] = {TERMINAL, "-n", "spbm", "-g", "135x30", "-e", "bm", "popup", NULL };
+const char *spcmd4[] = {TERMINAL, "-n", "spkp", "-g", "120x35", "-e", "keepassxc", NULL };
+const char *spcmd5[] = {TERMINAL, "-n", "sphist", "-g", "140x35", "-e", "hi", "popup", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
@@ -280,7 +280,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_i,		setlayout,	{.v = &layouts[7]} }, /* centeredfloatingmaster */
 	{ MODKEY,			XK_o,		incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,		XK_o,		incnmaster,     {.i = -1 } },
-	{ MODKEY,			XK_p,		spawn,		SHCMD("spot-cli -t; mpc toggle") },
+	{ MODKEY,			XK_p,		spawn,		SHCMD("mpc toggle; spot-cli -t") },
 	{ MODKEY|ShiftMask,		XK_p,		spawn,		SHCMD("mpc stop ; pauseallmpv; spot-cli -s") },
 	{ MODKEY,			XK_bracketleft,	spawn,		SHCMD("mpc seek -10; spot-cli --seek -10") },
 	{ MODKEY|ShiftMask,		XK_bracketleft,	spawn,		SHCMD("mpc seek -60; spot-cli --seek -60") },
@@ -303,12 +303,14 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_h,		togglescratch,	{.ui = 4} },
 	/* J and K are automatically bound above in STACKKEYS */
 	{ MODKEY,			XK_l,		setmfact,      	{.f = +0.05} },
+	{ MODKEY|ShiftMask,		XK_l,		spawn,      	SHCMD("dweb") },
 	{ MODKEY,			XK_semicolon,	shiftview,	{ .i = 1 } },
 	{ MODKEY|ShiftMask,		XK_semicolon,	shifttag,	{ .i = 1 } },
 	// { MODKEY,			XK_apostrophe,	spawn,		SHCMD("") }, // This is used by keepassxc
 	// { MODKEY|ShiftMask,		XK_apostrophe,	spawn,		SHCMD("") }, //
 	{ MODKEY,			XK_Return,	spawn,		{.v = termcmd } },
 	{ MODKEY|ShiftMask,		XK_Return,	togglescratch,	{.ui = 0} },
+	{ MODKEY|ControlMask,		XK_Return,	spawn,		SHCMD("wezterm") },
 	{ MODKEY|Mod1Mask,		XK_Return,	spawn,		SHCMD("tabbed -c -r 2 st -w id") },
 
 	{ MODKEY,			XK_z,		incrgaps,	{.i = +3 } },
@@ -316,7 +318,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_x,		incrgaps,	{.i = -3 } },
 	{ MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("togcomp") },
 	{ MODKEY|ShiftMask,		XK_c,		togglescratch,	{.ui = 1} },
-	// { MODKEY,			XK_c,		spawn,		SHCMD("") }, // This is used by `copyq`
+	{ MODKEY,			XK_c,		spawn,		SHCMD("cb") },
 	/* V is automatically bound above in STACKKEYS */
 	{ MODKEY,			XK_b,		togglebar,	{0} },
 	{ MODKEY|ShiftMask,		XK_b,		togglescratch,	{.ui = 2} },

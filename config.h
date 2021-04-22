@@ -94,7 +94,7 @@ static const char *const autostart[] = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "∋", "♯", "", "⠿", "♥", "", "" };
+static const char *tags[] = { "", "", "∋", "♯", "", "", "", "♥", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -104,12 +104,12 @@ static const Rule rules[] = {
 	/* class    		instance    	title		tags mask    isfloating isterminal noswallow  monitor float x,y */
 	{ TERMCLASS,		NULL,		NULL,		0,              0,		1,	0,	-1,  	0,0},
 	{ "TelegramDesktop",	NULL,		NULL,		0,              0,		0,	1,	-1,  	0,0},
-	{ "Chromium",		NULL,		NULL,		1 << 0,         0,		0,	1,	-1,  	0,0},
-	{ "Vieb",		NULL,		NULL,		1 << 0,         0,		0,	1,	-1,  	0,0},
-	{ "sysMon",		NULL,		NULL,		1 << 1,		0,		1,	0,	-1,  	0,0},
+	{ "Chromium",		NULL,		NULL,		1 << 1,         0,		0,	1,	-1,  	0,0},
+	{ "Vieb",		NULL,		NULL,		1 << 1,         0,		0,	1,	-1,  	0,0},
+	{ "sysMon",		NULL,		NULL,		1 << 5,		0,		1,	0,	-1,  	0,0},
 	{ "Scripting",		NULL,		NULL,		1 << 3,		0,		1,	0,	-1,  	0,0},
-	{ "Nicotine",		NULL,		NULL,		1 << 5,         0,		0,	0,	-1,  	0,0},
-	{ "SoulseekQt",		NULL,		NULL,		1 << 5,         0,		0,	0,	-1,  	0,0},
+	{ "Nicotine",		NULL,		NULL,		1 << 7,         0,		0,	0,	-1,  	0,0},
+	{ "SoulseekQt",		NULL,		NULL,		1 << 7,         0,		0,	0,	-1,  	0,0},
 	{ "qBittorrent",	NULL,		NULL,		1 << 6,         0,		0,	0,	-1,  	0,0},
 	{ "ncspot",		NULL,   	NULL,		1 << 8,         0,		1,	0,	-1,  	0,0},
 	{ "Spotify",		NULL,		NULL,		1 << 8,         0,		0,	0,	-1,  	0,0}, // this actualy works, thanks to https://github.com/dasJ/spotifywm

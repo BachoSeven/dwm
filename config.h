@@ -21,7 +21,7 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static int vertpad            = 10;        /* vertical padding of bar */
 static int sidepad            = 10;        /* horizontal padding of bar */
-static char *fonts[]          = { "monospace:size=16", "Noto Color Emoji:antialias=true:autohint=true", "Sarasa Mono K:size=16:antialias=true:autohint=true" };
+static char *fonts[]          = { "scientifica:size=20", "CozetteVector:size=20", "Hack Nerd Font:size=14:antialias=true:autohint=true", "Noto Color Emoji:antialias=true:autohint=true", "Sarasa Mono K:size=16:antialias=true:autohint=true" };
 static char normfgcolor[]		= "#bbbbbb";
 static char normbgcolor[]		= "#222222";
 static char normbordercolor[]		= "#444444";
@@ -94,7 +94,7 @@ static const char *const autostart[] = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "阮" };
+static const char *tags[] = { "", "", "∋", "♯", "", "⠿", "♥", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):

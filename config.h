@@ -103,7 +103,7 @@ static const Rule rules[] = {
 	*/
 	/* class    		instance    	title		tags mask    isfloating isterminal noswallow  monitor float x,y */
 	{ TERMCLASS,		NULL,		NULL,		0,              0,		1,	0,	-1,  	0,0},
-	{ "TelegramDesktop",	NULL,		NULL,		0,              0,		0,	1,	-1,  	0,0},
+	{ "KotatogramDesktop",	NULL,		NULL,		0,              0,		0,	1,	-1,  	0,0},
 	{ "Chromium",		NULL,		NULL,		1 << 1,         0,		0,	1,	-1,  	0,0},
 	{ "Vieb",		NULL,		NULL,		1 << 1,         0,		0,	1,	-1,  	0,0},
 	{ "sysMon",		NULL,		NULL,		1 << 5,		0,		1,	0,	-1,  	0,0},
@@ -331,6 +331,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_period,	spawn,		SHCMD("mpc next; spot-cli -n >/dev/null") },
 	{ MODKEY|ShiftMask,		XK_period,	spawn,		SHCMD("mpc repeat") },
 
+	// Used to switch monitor focus and move windows between monitors
 	{ MODKEY,			XK_Left,	focusmon,	{.i = -1 } },
 	{ MODKEY|ShiftMask,		XK_Left,	tagmon,		{.i = -1 } },
 	{ MODKEY,			XK_Right,	focusmon,	{.i = +1 } },
@@ -343,7 +344,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_Insert,	spawn,		SHCMD("notify-send \"📋 Clipboard contents:\" \"$(xclip -o -selection clipboard)\"") },
 
 	{ MODKEY,			XK_F1,		spawn,		SHCMD("mpc pause && mpc toggleoutput MPD && mpc toggleoutput MPD && mpc play") },
-	{ MODKEY,			XK_F2,		spawn,		SHCMD("connectHeadphones") },
+	{ MODKEY,			XK_F2,		spawn,		SHCMD("btmenu") },
 	{ MODKEY,			XK_F3,		spawn,		SHCMD("displayselect") },
 	{ MODKEY,			XK_F4,		spawn,		SHCMD(TERMINAL " -e pulsemixer; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_F5,		livexres,	{.v = NULL } },

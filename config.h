@@ -304,7 +304,7 @@ static Key keys[] = {
 	/* J and K are automatically bound above in STACKKEYS */
 	{ MODKEY,			XK_l,		setmfact,      	{.f = +0.05} },
 	{ MODKEY|ShiftMask,		XK_l,		spawn,      	SHCMD("dweb") },
-	{ MODKEY|ShiftMask,		XK_v,		spawn,      	SHCMD("dweb hist") },
+	{ MODKEY|ShiftMask,		XK_v,		spawn,      	SHCMD("dweb-hist") },
 	{ MODKEY,			XK_semicolon,	shiftview,	{ .i = 1 } },
 	{ MODKEY|ShiftMask,		XK_semicolon,	shifttag,	{ .i = 1 } },
 	// { MODKEY,			XK_apostrophe,	spawn,		SHCMD("") }, // This is used by keepassxc

@@ -265,11 +265,11 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_q,		spawn,		SHCMD("sysact") },
 	{ MODKEY,			XK_w,		spawn,		SHCMD("vieb") },
 	{ MODKEY,			XK_n,		spawn,		SHCMD("$BROWSER") },
-	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("killall nmtui-connect >/dev/null || st -e nmtui-connect") },
+	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("killall -q nmtui-connect || st -e nmtui-connect") },
 	{ MODKEY,			XK_e,		spawn,		SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks") },
 	{ MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD(TERMINAL " -e  abook") },
 	{ MODKEY,			XK_r,		spawn,		SHCMD(TERMINAL " -e lf") },
-	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD("killall btm >/dev/null || st -c sysMon -e btm") },
+	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD("killall -q btm || st -c sysMon -e btm") },
 	{ MODKEY,			XK_y,		setlayout,	{.v = &layouts[0]} }, /* spiral */
 	{ MODKEY|ShiftMask,		XK_y,		setlayout,	{.v = &layouts[1]} }, /* dwindle */
 	{ MODKEY,			XK_t,		setlayout,	{.v = &layouts[2]} }, /* tile */
@@ -292,7 +292,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_a,		togglegaps,	{0} },
 	{ MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },
 	{ MODKEY,			XK_s,		togglesticky,	{0} },
-	{ MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("killall screenkey >/dev/null || screenkey &") },
+	{ MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("killall -q screenkey || screenkey &") },
 	{ MODKEY,			XK_d,		spawn,          SHCMD("menu") },
 	{ MODKEY|ShiftMask,		XK_d,		spawn,		SHCMD("dscg") },
 	{ MODKEY,			XK_f,		togglefullscr,	{0} },
@@ -326,9 +326,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_n,		spawn,		SHCMD(TERMINAL " -e newsboat") },
 	{ MODKEY,			XK_m,		spawn,		SHCMD("setsid -f st -c ncmpcpp -e ncmpcpp -s playlist -S visualizer; kunst --silent") },
 	{ MODKEY|ShiftMask,		XK_m,		spawn,		SHCMD("vol toggle; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY,			XK_comma,	spawn,		SHCMD("mpc -q prev; spot-cli -p >/dev/null") },
+	{ MODKEY,			XK_comma,	spawn,		SHCMD("mpc -q prev; spot-cli -p") },
 	{ MODKEY|ShiftMask,		XK_comma,	spawn,		SHCMD("mpc -q seek 0%; spot-cli --set 0") },
-	{ MODKEY,			XK_period,	spawn,		SHCMD("mpc -q next; spot-cli -n >/dev/null") },
+	{ MODKEY,			XK_period,	spawn,		SHCMD("mpc -q next; spot-cli -n") },
 	{ MODKEY|ShiftMask,		XK_period,	spawn,		SHCMD("mpc -q repeat") },
 
 	// Used to switch monitor focus and move windows between monitors
@@ -367,8 +367,8 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("vol toggle; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("vol up 5; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("vol down 5; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioPrev,		spawn,		SHCMD("mpc -q prev; spot-cli -p >/dev/null") },
-	{ 0, XF86XK_AudioNext,		spawn,		SHCMD("mpc -q next; spot-cli -n >/dev/null") },
+	{ 0, XF86XK_AudioPrev,		spawn,		SHCMD("mpc -q prev; spot-cli -p") },
+	{ 0, XF86XK_AudioNext,		spawn,		SHCMD("mpc -q next; spot-cli -n") },
 	{ 0, XF86XK_AudioPause,		spawn,		SHCMD("mpc -q pause; spot-cli --pause") },
 	{ 0, XF86XK_AudioPlay,		spawn,		SHCMD("mpc -q play; spot-cli --play") },
 	{ 0, XF86XK_AudioStop,		spawn,		SHCMD("mpc -q stop; spot-cli -s") },

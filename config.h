@@ -381,7 +381,7 @@ static Key keys[] = {
 	// { 0, XF86XK_Sleep,		spawn,		SHCMD("sudo -A zzz") },
 	// { 0, XF86XK_WWW,		spawn,		SHCMD("$BROWSER") },
 	// { 0, XF86XK_DOS,		spawn,		SHCMD(TERMINAL) },
-	// { 0, XF86XK_ScreenSaver,	spawn,		SHCMD("slock & xset dpms force off; mpc -q pause; pauseallmpv") },
+	{ 0, XF86XK_ScreenSaver,	spawn,		SHCMD("br set 0 && slock & mpc -q pause; pauseallmpv") },
 	// { 0, XF86XK_TaskPane,		spawn,		SHCMD(TERMINAL " -e htop") },
 	// { 0, XF86XK_Mail,		spawn,		SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks") },
 	// { 0, XF86XK_MyComputer,		spawn,		SHCMD(TERMINAL " -e lf /") },

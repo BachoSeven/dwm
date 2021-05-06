@@ -114,13 +114,13 @@ static const Rule rules[] = {
 	{ "ncspot",		NULL,   	NULL,		1 << 8,         0,		1,	0,	-1,  	0,0},
 	{ "Spotify",		NULL,		NULL,		1 << 8,         0,		0,	0,	-1,  	0,0}, // this actualy works, thanks to https://github.com/dasJ/spotifywm
 	{ "ncmpcpp",		NULL,   	NULL,		1 << 8,         0,		1,	0,	-1,  	0,0},
+	{ "Tauon Music Box",NULL,	NULL,		1 << 8,         0,		1,	0,	-1,  	0,0},
 	{ "Primephonic",	NULL,		NULL,		1 << 8,         0,		0,	1,	-1,  	0,0},
 	{ "Zathura",		NULL,   	NULL,		0,              0,		0,	1,	-1,  	0,0},
 	{ "copyq",		NULL,   	NULL,		0,              1,		0,	0,	-1,  	0,0},
 	{ "Dragon-drag-and-drop",NULL,		NULL,		0,              1,		0,	1,	-1,  	100,100},
 	{ NULL,			NULL,   	"Event Tester", 0,		0,		0,	1,	-1,  	0,0}, // Xev
-	// { NULL,			NULL,   	"SafeEyes-0",	0,		1,		0,	1,	0,  	0,0},
-	{ NULL,			"Kunst",	NULL,           1 << 8,         1,		0,	0,	-1,  	0,0},
+	{ NULL,			"Kunst",	NULL,           1 << 8,       1,		0,	0,	-1,  	0,0},
 	{ NULL,			"spterm",	NULL,       	SPTAG(0),       1,		1,	0,	-1,  	0,0},
 	{ NULL,			"spcalc",	NULL,       	SPTAG(1),       1,		1,	0,	-1,  	0,0},
 	{ NULL,			"spbm",		NULL,       	SPTAG(2),       1,		1,	0,	-1,  	0,0},

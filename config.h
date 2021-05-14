@@ -21,7 +21,7 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static int vertpad            = 10;        /* vertical padding of bar */
 static int sidepad            = 10;        /* horizontal padding of bar */
-static char *fonts[]          = { "scientifica:size=20", "CozetteVector:size=20", "Hack Nerd Font:size=14:antialias=true:autohint=true", "Noto Color Emoji:antialias=true:autohint=true", "Sarasa Mono K:size=16:antialias=true:autohint=true" };
+static char *fonts[]          = { "scientifica:size=20", "CozetteVector:size=20", "Hack Nerd Font:size=14:antialias=true:autohint=true", "Noto Color Emoji:antialias=true:autohint=true", "Noto Sans CJK JP:size=16:antialias=true:autohint=true", "Noto Sans CJK KR:size=16:antialias=true:autohint=true", "Noto Sans CJK SC:size=16:antialias=true:autohint=true", "Noto Sans CJK TC:size=16:antialias=true:autohint=true" };
 static char normfgcolor[]		= "#bbbbbb";
 static char normbgcolor[]		= "#222222";
 static char normbordercolor[]		= "#444444";
@@ -88,7 +88,7 @@ static Sp scratchpads[] = {
 };
 
 static const char *const autostart[] = {
-	"kitty", "-o", "font_size=10", "welcome", NULL,
+	"wezterm", "start", "--", "welcome", NULL,
 	TERMINAL, "-c", "sysMon", "-e", "btm", NULL,
 	NULL /* terminate */
 };
@@ -266,7 +266,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_w,		spawn,		SHCMD("vieb") },
 	{ MODKEY,			XK_n,		spawn,		SHCMD("$BROWSER") },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("killall -q nmtui-connect || st -e nmtui-connect") },
-	{ MODKEY,			XK_e,		spawn,		SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks") },
+	{ MODKEY,			XK_e,		spawn,		SHCMD(TERMINAL " -e neomutt; pkill -RTMIN+12 dwmblocks") },
 	{ MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD(TERMINAL " -e  abook") },
 	{ MODKEY,			XK_r,		spawn,		SHCMD(TERMINAL " -e lf") },
 	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD("killall -q btm || st -c sysMon -e btm") },
@@ -281,7 +281,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_o,		incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,		XK_o,		incnmaster,     {.i = -1 } },
 	{ MODKEY,			XK_p,		spawn,		SHCMD("mpc -q toggle; spot-cli -t") },
-	{ MODKEY|ShiftMask,		XK_p,		spawn,		SHCMD("mpc -q stop ; pauseallmpv; spot-cli -s") },
+	{ MODKEY|ShiftMask,		XK_p,		spawn,		SHCMD("mpc -q stop; pauseallmpv; spot-cli -s") },
 	{ MODKEY,			XK_bracketleft,	spawn,		SHCMD("mpc -q seek -10; spot-cli --seek -10") },
 	{ MODKEY|ShiftMask,		XK_bracketleft,	spawn,		SHCMD("mpc -q seek -60; spot-cli --seek -60") },
 	{ MODKEY,			XK_bracketright,spawn,		SHCMD("mpc -q seek +10; spot-cli --seek +10") },
@@ -383,7 +383,7 @@ static Key keys[] = {
 	// { 0, XF86XK_DOS,		spawn,		SHCMD(TERMINAL) },
 	{ 0, XF86XK_ScreenSaver,	spawn,		SHCMD("br set 0 && slock & mpc -q pause; pauseallmpv") },
 	// { 0, XF86XK_TaskPane,		spawn,		SHCMD(TERMINAL " -e htop") },
-	// { 0, XF86XK_Mail,		spawn,		SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks") },
+	// { 0, XF86XK_Mail,		spawn,		SHCMD(TERMINAL " -e neomutt; pkill -RTMIN+12 dwmblocks") },
 	// { 0, XF86XK_MyComputer,		spawn,		SHCMD(TERMINAL " -e lf /") },
 	/* { 0, XF86XK_Battery,		spawn,		SHCMD("") }, */
 	// { 0, XF86XK_Launch1,		spawn,		SHCMD("xset dpms force off") },

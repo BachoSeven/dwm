@@ -239,6 +239,10 @@ static Key keys[] = {
 	STACKKEYS(MODKEY,                          focus)
 	STACKKEYS(MODKEY|ShiftMask,                push)
 	// { MODKEY|ShiftMask,		XK_Escape,	spawn,	SHCMD("") },
+	{ ControlMask,		XK_Escape,	spawn,		SHCMD("dunstctl pop-history") },
+	{ ControlMask,		XK_space,	spawn,		SHCMD("dunstctl close") },
+	{ ControlMask|ShiftMask, XK_space,	spawn,		SHCMD("dunstctl close-all") },
+	{ ControlMask|ShiftMask, XK_period,	spawn,		SHCMD("dunstctl context") },
 	{ MODKEY,			XK_grave,	spawn,	SHCMD("dmenuunicode") },
 	{ MODKEY|ShiftMask,		XK_grave,	spawn,	SHCMD("dmoji") },
 	TAGKEYS(			XK_1,		0)
@@ -313,9 +317,9 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,		XK_Return,	spawn,		SHCMD("wezterm") },
 	{ MODKEY|Mod1Mask,		XK_Return,	spawn,		SHCMD("tabbed -c -r 2 st -w id") },
 
-	{ MODKEY,			XK_z,		incrgaps,	{.i = +3 } },
+	{ MODKEY,			XK_z,		incrogaps,	{.i = +3 } },
 	{ MODKEY|ShiftMask,		XK_z,		togglescratch,	{.ui = 3} },
-	{ MODKEY,			XK_x,		incrgaps,	{.i = -3 } },
+	{ MODKEY,			XK_x,		incrogaps,	{.i = -3 } },
 	{ MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("togcomp") },
 	{ MODKEY|ShiftMask,		XK_c,		togglescratch,	{.ui = 1} },
 	{ MODKEY,			XK_c,		spawn,		SHCMD("cb") },
@@ -414,8 +418,8 @@ static Button buttons[] = {
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
 	{ ClkClientWin,         MODKEY|ShiftMask,Button3,       spawn,        	SHCMD("xm") },
 	{ ClkClientWin,		ShiftMask,      Button3,        startgesture,   {0} },
-	{ ClkClientWin,		MODKEY,		Button4,	incrgaps,	{.i = +1} },
-	{ ClkClientWin,		MODKEY,		Button5,	incrgaps,	{.i = -1} },
+	{ ClkClientWin,		MODKEY,		Button4,	incrogaps,	{.i = +1} },
+	{ ClkClientWin,		MODKEY,		Button5,	incrogaps,	{.i = -1} },
 	{ ClkTagBar,            0,              Button1,        view,           {0} },
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },

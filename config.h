@@ -239,7 +239,7 @@ static Key keys[] = {
 	STACKKEYS(MODKEY,                          focus)
 	STACKKEYS(MODKEY|ShiftMask,                push)
 	// { MODKEY|ShiftMask,		XK_Escape,	spawn,	SHCMD("") },
-	{ ControlMask,		XK_Escape,	spawn,		SHCMD("dunstctl pop-history") },
+	{ ControlMask,		XK_Escape,	spawn,		SHCMD("dunstctl history-pop") },
 	{ ControlMask,		XK_space,	spawn,		SHCMD("dunstctl close") },
 	{ ControlMask|ShiftMask, XK_space,	spawn,		SHCMD("dunstctl close-all") },
 	{ ControlMask|ShiftMask, XK_period,	spawn,		SHCMD("dunstctl context") },

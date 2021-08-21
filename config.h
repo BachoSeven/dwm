@@ -349,7 +349,7 @@ static Key keys[] = {
 
 	{ MODKEY,			XK_F1,		spawn,		SHCMD("mpc -q pause && mpc -q toggleoutput MPD && mpc -q toggleoutput MPD && mpc -q play") },
 	{ MODKEY,			XK_F2,		spawn,		SHCMD("btmenu") },
-	{ MODKEY,			XK_F3,		spawn,		SHCMD("displayselect") },
+	{ MODKEY,			XK_F3,		spawn,		SHCMD("montoggle") },
 	{ MODKEY,			XK_F4,		spawn,		SHCMD(TERMINAL " -e pulsemixer; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_F5,		livexres,	{.v = NULL } },
 	{ MODKEY,			XK_F6,		spawn,		SHCMD("torwrap") },

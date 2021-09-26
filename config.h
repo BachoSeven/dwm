@@ -115,7 +115,7 @@ static const Rule rules[] = {
 	{ "Spotify",		NULL,		NULL,		1 << 8,         0,		0,	0,	-1,  	0,0}, // this actualy works, thanks to https://github.com/dasJ/spotifywm
 	{ "ncmpcpp",		NULL,   	NULL,		1 << 8,         0,		1,	0,	-1,  	0,0},
 	{ "Tauon Music Box",NULL,	NULL,		1 << 8,         0,		1,	0,	-1,  	0,0},
-	{ "Primephonic",	NULL,		NULL,		1 << 8,         0,		0,	1,	-1,  	0,0},
+	{ "AppMus",	NULL,		NULL,		1 << 8,         0,		0,	1,	-1,  	0,0},
 	{ "Zathura",		NULL,   	NULL,		0,              0,		0,	1,	-1,  	0,0},
 	{ "copyq",		NULL,   	NULL,		0,              1,		0,	0,	-1,  	0,0},
 	{ "Dragon-drag-and-drop",NULL,		NULL,		0,              1,		0,	1,	-1,  	100,100},
@@ -245,6 +245,7 @@ static Key keys[] = {
 	{ ControlMask|ShiftMask, XK_period,	spawn,		SHCMD("dunstctl context") },
 	{ MODKEY,			XK_grave,	spawn,	SHCMD("dmenuunicode") },
 	{ MODKEY|ShiftMask,		XK_grave,	spawn,	SHCMD("dmoji") },
+	{ MODKEY|Mod1Mask,	XK_g, spawn,	SHCMD("cut -d ';' -f1 $XDG_DATA_HOME/icons/greekLetters | dmenu -i -r -l 20 | sed 's/ .*//' | tr -d '\n' | xclip -sel c -r") },
 	TAGKEYS(			XK_1,		0)
 	TAGKEYS(			XK_2,		1)
 	TAGKEYS(			XK_3,		2)

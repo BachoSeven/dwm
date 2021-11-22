@@ -270,7 +270,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_q,		killclient,	{0} },
 	{ MODKEY|ShiftMask,		XK_q,		spawn,		SHCMD("sysact") },
 	{ MODKEY,			XK_w,		spawn,		SHCMD("vieb") },
-	{ MODKEY,			XK_n,		spawn,		SHCMD("$BROWSER") },
+	{ MODKEY,			XK_n,		spawn,		SHCMD("ung") },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("killall -q nmtui-connect || st -e nmtui-connect") },
 	{ MODKEY,			XK_e,		spawn,		SHCMD(TERMINAL " -e neomutt; pkill -RTMIN+12 dwmblocks") },
 	{ MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD(TERMINAL " -e  abook") },

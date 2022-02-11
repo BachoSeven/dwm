@@ -112,11 +112,11 @@ static const Rule rules[] = {
 	{ "SoulseekQt",		NULL,		NULL,		1 << 7,         0,		0,	0,	-1,  	0,0},
 	{ "qBittorrent",	NULL,		NULL,		1 << 6,         0,		0,	0,	-1,  	0,0},
 	{ "ncspot",		NULL,   	NULL,		1 << 8,         0,		1,	0,	-1,  	0,0},
-	{ "Spotify",		NULL,		NULL,		1 << 8,         0,		0,	0,	-1,  	0,0}, // this actualy works, thanks to https://github.com/dasJ/spotifywm
+	{ "Spotify",		NULL,		NULL,		1 << 8,         0,		0,	0,	-1,  	0,0}, // this used to work thanks to https://github.com/dasJ/spotifywm
 	{ "Deadbeef",		NULL,		NULL,		1 << 8,         0,		0,	0,	-1,  	0,0},
 	{ "ncmpcpp",		NULL,   	NULL,		1 << 8,         0,		1,	0,	-1,  	0,0},
 	{ "Tauon Music Box",NULL,	NULL,		1 << 8,         0,		1,	0,	-1,  	0,0},
-	{ "AppMus",	NULL,		NULL,		1 << 8,         0,		0,	1,	-1,  	0,0},
+	{ "Appmus",	NULL,		NULL,		1 << 8,         0,		0,	1,	-1,  	0,0},
 	{ "Zathura",		NULL,   	NULL,		0,              0,		0,	1,	-1,  	0,0},
 	{ "copyq",		NULL,   	NULL,		0,              1,		0,	0,	-1,  	0,0},
 	{ "Dragon-drag-and-drop",NULL,		NULL,		0,              1,		0,	1,	-1,  	100,100},

@@ -401,7 +401,7 @@ applyrules(Client *c)
 	c->isfloating = 0;
 	c->tags = 0;
 	XGetClassHint(dpy, c->win, &ch);
-	if (0 == system("[ $(ps -o etimes= -p $(pgrep -o spotify)) -lt 3 ]")) {
+	if (0 == system("[ $(ps -o etimes= -p $(pgrep -o spotify) 2>/dev/null) -lt 3 ] 2>/dev/null")) {
 		class  = ch.res_class ? ch.res_class : "Spotify";
 	} else {
 		class  = ch.res_class ? ch.res_class : broken;

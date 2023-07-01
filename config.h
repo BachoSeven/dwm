@@ -21,7 +21,7 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static int vertpad            = 10;        /* vertical padding of bar */
 static int sidepad            = 10;        /* horizontal padding of bar */
-static char *fonts[]          = { "scientifica:size=20", "CozetteVector:size=20", "Hack Nerd Font:size=14:antialias=true:autohint=true", "Noto Color Emoji:antialias=true:autohint=true", "Noto Sans CJK JP:size=16:antialias=true:autohint=true", "Noto Sans CJK KR:size=16:antialias=true:autohint=true", "Noto Sans CJK SC:size=16:antialias=true:autohint=true", "Noto Sans CJK TC:size=16:antialias=true:autohint=true" };
+static char *fonts[]          = { "scientifica:size=18", "Hack Nerd Font:size=12:antialias=true:autohint=true", "Noto Color Emoji:antialias=true:autohint=true", "Noto Sans CJK JP:size=14:antialias=true:autohint=true", "Noto Sans CJK KR:size=14:antialias=true:autohint=true", "Noto Sans CJK SC:size=14:antialias=true:autohint=true", "Noto Sans CJK TC:size=14:antialias=true:autohint=true" };
 static char normfgcolor[]		= "#bbbbbb";
 static char normbgcolor[]		= "#222222";
 static char normbordercolor[]		= "#444444";
@@ -73,11 +73,11 @@ typedef struct {
 	const char *name;
 	const void *cmd;
 } Sp;
-const char *spcmd1[] = {TERMINAL, "-n", "spterm", "-g", "120x35", NULL };
+const char *spcmd1[] = {TERMINAL, "-n", "spterm", "-g", "80x25", NULL };
 const char *spcmd2[] = {TERMINAL, "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-e", "bc", "-lq", NULL };
-const char *spcmd3[] = {TERMINAL, "-n", "spbm", "-g", "135x30", "-e", "bm", "popup", NULL };
-const char *spcmd4[] = {TERMINAL, "-n", "spkp", "-g", "120x35", "-e", "keepassxc", NULL };
-const char *spcmd5[] = {TERMINAL, "-n", "sphist", "-g", "140x35", "-e", "hi", "popup", NULL };
+const char *spcmd3[] = {TERMINAL, "-n", "spbm", "-g", "85x25", "-e", "bm", "popup", NULL };
+const char *spcmd4[] = {TERMINAL, "-n", "spkp", "-g", "80x25", "-e", "keepassxc", NULL };
+const char *spcmd5[] = {TERMINAL, "-n", "sphist", "-g", "90x25", "-e", "hi", "popup", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
@@ -88,8 +88,8 @@ static Sp scratchpads[] = {
 };
 
 static const char *const autostart[] = {
-	"wezterm", "start", "--", "welcome", NULL,
 	TERMINAL, "-c", "sysMon", "-e", "btm", NULL,
+	"init-pdf", NULL,
 	NULL /* terminate */
 };
 
@@ -241,7 +241,7 @@ static Key keys[] = {
 	STACKKEYS(MODKEY|ShiftMask,                push)
 	// { MODKEY|ShiftMask,		XK_Escape,	spawn,	SHCMD("") },
 	{ ControlMask,		XK_Escape,	spawn,		SHCMD("dunstctl history-pop") },
-	{ ControlMask,		XK_space,	spawn,		SHCMD("dunstctl close") },
+	{ ControlMask|Mod1Mask,		XK_space,	spawn,		SHCMD("dunstctl close") },
 	{ ControlMask|ShiftMask, XK_space,	spawn,		SHCMD("dunstctl close-all") },
 	{ ControlMask|ShiftMask, XK_period,	spawn,		SHCMD("dunstctl context") },
 	{ MODKEY,			XK_grave,	spawn,	SHCMD("dmenuunicode") },
@@ -286,12 +286,12 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_i,		setlayout,	{.v = &layouts[7]} }, /* centeredfloatingmaster */
 	{ MODKEY,			XK_o,		incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,		XK_o,		incnmaster,     {.i = -1 } },
-	{ MODKEY,			XK_p,		spawn,		SHCMD("mpc -q toggle; spot-cli -t") },
-	{ MODKEY|ShiftMask,		XK_p,		spawn,		SHCMD("mpc -q stop; pauseallmpv; spot-cli -s") },
-	{ MODKEY,			XK_bracketleft,	spawn,		SHCMD("mpc -q seek -10; spot-cli --seek -10") },
-	{ MODKEY|ShiftMask,		XK_bracketleft,	spawn,		SHCMD("mpc -q seek -60; spot-cli --seek -60") },
-	{ MODKEY,			XK_bracketright,spawn,		SHCMD("mpc -q seek +10; spot-cli --seek +10") },
-	{ MODKEY|ShiftMask,		XK_bracketright,spawn,		SHCMD("mpc -q seek +60; spot-cli --seek +60") },
+	{ MODKEY,			XK_p,		spawn,		SHCMD("mpc -q toggle; MPD_PORT=6600 mpc -q toggle; spot-cli -t") },
+	{ MODKEY|ShiftMask,		XK_p,		spawn,		SHCMD("mpc -q stop; MPD_PORT=6600 mpc -q stop; pauseallmpv; spot-cli -s") },
+	{ MODKEY,			XK_bracketleft,	spawn,		SHCMD("mpc -q seek -10; MPD_PORT=6600 mpc -q seek -10; spot-cli --seek -10") },
+	{ MODKEY|ShiftMask,		XK_bracketleft,	spawn,		SHCMD("mpc -q seek -60; MPD_PORT=6600 mpc -q seek -60; spot-cli --seek -60") },
+	{ MODKEY,			XK_bracketright,spawn,		SHCMD("mpc -q seek +10; MPD_PORT=6600 mpc -q seek +10; spot-cli --seek +10") },
+	{ MODKEY|ShiftMask,		XK_bracketright,spawn,		SHCMD("mpc -q seek +60; MPD_PORT=6600 mpc -q seek +60; spot-cli --seek +60") },
 	{ MODKEY,			XK_backslash,	view,		{0} },
 	{ MODKEY|ShiftMask,		XK_backslash,	setlayout,	{.v = &layouts[8]} },
 
@@ -332,10 +332,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_n,		spawn,		SHCMD(TERMINAL " -e newsboat") },
 	{ MODKEY,			XK_m,		spawn,		SHCMD("setsid -f st -c ncmpcpp -e ncmpcpp -s playlist -S visualizer; kunst --silent") },
 	{ MODKEY|ShiftMask,		XK_m,		spawn,		SHCMD("vol toggle; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY,			XK_comma,	spawn,		SHCMD("mpc -q prev; spot-cli -p") },
-	{ MODKEY|ShiftMask,		XK_comma,	spawn,		SHCMD("mpc -q seek 0%; spot-cli --set 0") },
+	{ MODKEY,			XK_comma,	spawn,		SHCMD("mpc -q prev; MPD_PORT=6600 mpc -q prev; spot-cli -p") },
+	{ MODKEY|ShiftMask,		XK_comma,	spawn,		SHCMD("mpc -q seek 0%; MPD_PORT=6600 mpc -q seek 0%; spot-cli --set 0") },
 	{ MODKEY,			XK_period,	spawn,		SHCMD("mpc -q next; spot-cli -n") },
-	{ MODKEY|ShiftMask,		XK_period,	spawn,		SHCMD("mpc -q repeat") },
+	{ MODKEY|ShiftMask,		XK_period,	spawn,		SHCMD("mpc -q repeat; MPD_PORT=6600 mpc -q repeat") },
 
 	// Used to switch monitor focus and move windows between monitors
 	{ MODKEY,			XK_Left,	focusmon,	{.i = -1 } },
@@ -349,14 +349,14 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_Page_Down,	shifttag,	{ .i = +1 } },
 	{ MODKEY,			XK_Insert,	spawn,		SHCMD("notify-send \"📋 Clipboard contents:\" \"$(xclip -o -selection clipboard)\"") },
 
-	{ MODKEY,			XK_F1,		spawn,		SHCMD("mpc -q pause && mpc -q toggleoutput MPD && mpc -q toggleoutput MPD && mpc -q play") },
+	{ MODKEY,			XK_F1,		spawn,		SHCMD("mpc -q pause && mpc -q toggleoutput MPD && mpc -q toggleoutput MPD && mpc -q play; MPD_PORT=6600 mpc -q pause && mpc -q toggleoutput MPD && mpc -q toggleoutput MPD && mpc -q play") },
 	{ MODKEY,			XK_F2,		spawn,		SHCMD("btmenu") },
 	{ MODKEY,			XK_F3,		spawn,		SHCMD("mon -t") },
 	{ MODKEY,			XK_F4,		spawn,		SHCMD(TERMINAL " -e pulsemixer; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_F5,		livexres,	{.v = NULL } },
 	{ MODKEY,			XK_F6,		spawn,		SHCMD("torwrap") },
 	{ MODKEY,			XK_F7,		spawn,		SHCMD("qbtoggle") },
-	{ MODKEY,			XK_F8,		spawn,		SHCMD("mw -Y; ; kill -46 $(pidof dwmblocks)") },
+	{ MODKEY,			XK_F8,		spawn,		SHCMD("mailsync; ; kill -46 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_F9,		spawn,		SHCMD("dmenumount") },
 	{ MODKEY,			XK_F10,		spawn,		SHCMD("dmenuumount") },
 	{ MODKEY,			XK_F11,		spawn,		SHCMD("camtoggle") },
@@ -373,13 +373,13 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("vol toggle; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("vol up 5; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("vol down 5; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioPrev,		spawn,		SHCMD("mpc -q prev; spot-cli -p") },
-	{ 0, XF86XK_AudioNext,		spawn,		SHCMD("mpc -q next; spot-cli -n") },
-	{ 0, XF86XK_AudioPause,		spawn,		SHCMD("mpc -q pause; spot-cli --pause") },
-	{ 0, XF86XK_AudioPlay,		spawn,		SHCMD("mpc -q play; spot-cli --play") },
-	{ 0, XF86XK_AudioStop,		spawn,		SHCMD("mpc -q stop; spot-cli -s") },
-	// { 0, XF86XK_AudioRewind,	spawn,		SHCMD("mpc -q seek -10") },
-	// { 0, XF86XK_AudioForward,	spawn,		SHCMD("mpc -q seek +10") },
+	{ 0, XF86XK_AudioPrev,		spawn,		SHCMD("mpc -q prev; MPD_PORT=6600 mpc -q prev; spot-cli -p") },
+	{ 0, XF86XK_AudioNext,		spawn,		SHCMD("mpc -q next; MPD_PORT=6600 mpc -q next; spot-cli -n") },
+	{ 0, XF86XK_AudioPause,		spawn,		SHCMD("mpc -q toggle; MPD_PORT=6600 mpc -q toggle; spot-cli --toggle") },
+	{ 0, XF86XK_AudioPlay,		spawn,		SHCMD("mpc -q play; MPD_PORT=6600 mpc -q play; spot-cli --play") },
+	{ 0, XF86XK_AudioStop,		spawn,		SHCMD("mpc -q stop; MPD_PORT=6600 mpc -q stop; spot-cli -s") },
+	{ 0, XF86XK_AudioRewind,	spawn,		SHCMD("mpc -q seek; MPD_PORT=6600 mpc -q seek -10") },
+	{ 0, XF86XK_AudioForward,	spawn,		SHCMD("mpc -q seek; MPD_PORT=6600 mpc -q seek +10") },
 	// { 0, XF86XK_AudioMedia,		spawn,		SHCMD(TERMINAL " -e ncmpcpp") },
 	{ 0, XF86XK_AudioMicMute,	spawn,		SHCMD("pactl set-source-mute @DEFAULT_SOURCE@ toggle") },
 	{ 0, XF86XK_PowerOff,		spawn,		SHCMD("sysact") },
@@ -387,12 +387,13 @@ static Key keys[] = {
 	// { 0, XF86XK_Sleep,		spawn,		SHCMD("sudo -A zzz") },
 	// { 0, XF86XK_WWW,		spawn,		SHCMD("$BROWSER") },
 	// { 0, XF86XK_DOS,		spawn,		SHCMD(TERMINAL) },
-	{ 0, XF86XK_ScreenSaver,	spawn,		SHCMD("br set 0 && slock & mpc -q pause; pauseallmpv") },
+	{ 0, XF86XK_ScreenSaver,	spawn,		SHCMD("br set 0 && slock & mpc -q pause; MPD_PORT=6600 mpc -q pause; pauseallmpv") },
+	{ 0, XF86XK_WebCam,		spawn,		SHCMD("camtoggle") },
 	// { 0, XF86XK_TaskPane,		spawn,		SHCMD(TERMINAL " -e htop") },
 	// { 0, XF86XK_Mail,		spawn,		SHCMD(TERMINAL " -e neomutt; kill -46 $(pidof dwmblocks)") },
 	// { 0, XF86XK_MyComputer,		spawn,		SHCMD(TERMINAL " -e lf /") },
 	/* { 0, XF86XK_Battery,		spawn,		SHCMD("") }, */
-	// { 0, XF86XK_Launch1,		spawn,		SHCMD("xset dpms force off") },
+	{ 0, XF86XK_Launch1,		spawn,		SHCMD("xset dpms force off") },
 	{ 0, XF86XK_TouchpadToggle,	spawn,		SHCMD("touchpadtoggle") },
 	// { 0, XF86XK_TouchpadOff,	spawn,		SHCMD("synclient TouchpadOff=1") },
 	// { 0, XF86XK_TouchpadOn,		spawn,		SHCMD("synclient TouchpadOff=0") },
@@ -433,4 +434,77 @@ static Button buttons[] = {
 	{ ClkRootWin,		0,		Button9,	shiftview,	{.i = 1} },
 	{ ClkRootWin,           0,              Button3,        spawn,          SHCMD("xm") },
 	{ ClkRootWin,          	MODKEY,         Button3,        startgesture,   {0} },
+};
+
+/* Dwmc patch stuff */
+void
+setlayoutex(const Arg *arg)
+{
+	setlayout(&((Arg) { .v = &layouts[arg->i] }));
+}
+
+void
+viewex(const Arg *arg)
+{
+	view(&((Arg) { .ui = 1 << (arg->ui - 1) }));
+}
+
+void
+viewall(const Arg *arg)
+{
+	view(&((Arg){.ui = ~0}));
+}
+
+void
+toggleviewex(const Arg *arg)
+{
+	toggleview(&((Arg) { .ui = 1 << (arg->ui - 1) }));
+}
+
+void
+tagex(const Arg *arg)
+{
+	tag(&((Arg) { .ui = 1 << (arg->ui - 1) }));
+}
+
+void
+toggletagex(const Arg *arg)
+{
+	toggletag(&((Arg) { .ui = 1 << (arg->ui - 1) }));
+}
+
+void
+tagall(const Arg *arg)
+{
+	tag(&((Arg){.ui = ~0}));
+}
+
+/* signal definitions */
+/* signum must be greater than 0 */
+/* trigger signals using `xsetroot -name "fsignal:<signame> [<type> <value>]"` */
+static Signal signals[] = {
+	/* signum           function */
+	{ "focusstack",     focusstack },
+	{ "setmfact",       setmfact },
+	{ "togglebar",      togglebar },
+	{ "incnmaster",     incnmaster },
+	{ "togglefloating", togglefloating },
+	{ "focusmon",       focusmon },
+	{ "tagmon",         tagmon },
+	{ "zoom",           zoom },
+	{ "view",           view },
+	{ "viewall",        viewall },
+	{ "viewex",         viewex },
+	{ "toggleview",     view },
+	{ "toggleviewex",   toggleviewex },
+	{ "tag",            tag },
+	{ "tagall",         tagall },
+	{ "tagex",          tagex },
+	{ "toggletag",      tag },
+	{ "toggletagex",    toggletagex },
+	{ "killclient",     killclient },
+	{ "quit",           quit },
+	{ "setlayout",      setlayout },
+	{ "setlayoutex",    setlayoutex },
+	{ "xrdb",           livexres },
 };

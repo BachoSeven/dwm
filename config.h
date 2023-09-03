@@ -356,7 +356,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_F5,		livexres,	{.v = NULL } },
 	{ MODKEY,			XK_F6,		spawn,		SHCMD("torwrap") },
 	{ MODKEY,			XK_F7,		spawn,		SHCMD("qbtoggle") },
-	{ MODKEY,			XK_F8,		spawn,		SHCMD("mailsync; ; kill -46 $(pidof dwmblocks)") },
+	{ MODKEY,			XK_F8,		spawn,		SHCMD("mailsync; kill -46 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_F9,		spawn,		SHCMD("dmenumount") },
 	{ MODKEY,			XK_F10,		spawn,		SHCMD("dmenuumount") },
 	{ MODKEY,			XK_F11,		spawn,		SHCMD("camtoggle") },

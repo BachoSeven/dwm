@@ -21,7 +21,7 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static int vertpad            = 10;        /* vertical padding of bar */
 static int sidepad            = 10;        /* horizontal padding of bar */
-static char *fonts[]          = { "scientifica:size=18", "Hack Nerd Font:size=12:antialias=true:autohint=true", "Noto Color Emoji:antialias=true:autohint=true", "Noto Sans CJK JP:size=14:antialias=true:autohint=true", "Noto Sans CJK KR:size=14:antialias=true:autohint=true", "Noto Sans CJK SC:size=14:antialias=true:autohint=true", "Noto Sans CJK TC:size=14:antialias=true:autohint=true" };
+static char *fonts[]          = { "scientifica:size=20", "Hack Nerd Font:size=18:antialias=true:autohint=true", "Noto Color Emoji:antialias=true:autohint=true", "Noto Sans CJK JP:size=14:antialias=true:autohint=true", "Noto Sans CJK KR:size=14:antialias=true:autohint=true", "Noto Sans CJK SC:size=14:antialias=true:autohint=true", "Noto Sans CJK TC:size=14:antialias=true:autohint=true" };
 static char normfgcolor[]		= "#bbbbbb";
 static char normbgcolor[]		= "#222222";
 static char normbordercolor[]		= "#444444";
@@ -73,11 +73,11 @@ typedef struct {
 	const char *name;
 	const void *cmd;
 } Sp;
-const char *spcmd1[] = {TERMINAL, "-n", "spterm", "-g", "80x25", NULL };
+const char *spcmd1[] = {TERMINAL, "-n", "spterm", "-g", "120x40", NULL };
 const char *spcmd2[] = {TERMINAL, "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-e", "bc", "-lq", NULL };
-const char *spcmd3[] = {TERMINAL, "-n", "spbm", "-g", "85x25", "-e", "bm", "popup", NULL };
-const char *spcmd4[] = {TERMINAL, "-n", "spkp", "-g", "80x25", "-e", "keepassxc", NULL };
-const char *spcmd5[] = {TERMINAL, "-n", "sphist", "-g", "90x25", "-e", "hi", "popup", NULL };
+const char *spcmd3[] = {TERMINAL, "-n", "spbm", "-g", "140x40", "-e", "bm", "popup", NULL };
+const char *spcmd4[] = {TERMINAL, "-n", "spkp", "-g", "120x40", "-e", "keepassxc", NULL };
+const char *spcmd5[] = {TERMINAL, "-n", "sphist", "-g", "140x40", "-e", "hi", "popup", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
@@ -270,7 +270,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_q,		killclient,	{0} },
 	{ MODKEY|ShiftMask,		XK_q,		spawn,		SHCMD("sysact") },
 	{ MODKEY,			XK_w,		spawn,		SHCMD("vieb") },
-	{ MODKEY,			XK_n,		spawn,		SHCMD("ung") },
+	{ MODKEY,			XK_n,		spawn,		SHCMD("chromium") },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("killall -q nmtui-connect || st -e nmtui-connect") },
 	{ MODKEY,			XK_e,		spawn,		SHCMD(TERMINAL " -e neomutt; kill -46 $(pidof dwmblocks)") },
 	{ MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD(TERMINAL " -e  abook") },

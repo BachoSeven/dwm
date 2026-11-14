@@ -21,7 +21,7 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static int vertpad            = 10;        /* vertical padding of bar */
 static int sidepad            = 10;        /* horizontal padding of bar */
-static char *fonts[]          = { "scientifica:size=18:antialias=true:autohint=true", "Hack Nerd Font:size=18:antialias=true:autohint=true", "Noto Color Emoji:size=14:antialias=true:autohint=true", "Noto Sans CJK JP:size=14:antialias=true:autohint=true", "Noto Sans CJK KR:size=14:antialias=true:autohint=true", "Noto Sans CJK SC:size=14:antialias=true:autohint=true", "Noto Sans CJK TC:size=14:antialias=true:autohint=true" };
+static char *fonts[]          = { "scientifica:size=18:antialias=true:autohint=true", "Hack Nerd Font Mono:size=18:antialias=true:autohint=true", "Symbols Nerd Font Mono:size=18:antialias=true:autohint=true", "Font Awesome 7 Free:style=Solid:size=18:antialias=true:autohint=true", "Noto Color Emoji:size=18:antialias=true:autohint=true", "Noto Sans CJK JP:size=18:antialias=true:autohint=true", "Noto Sans CJK KR:size=18:antialias=true:autohint=true", "Noto Sans CJK SC:size=18:antialias=true:autohint=true", "Noto Sans CJK TC:size=18:antialias=true:autohint=true" };
 static char normfgcolor[]		= "#bbbbbb";
 static char normbgcolor[]		= "#222222";
 static char normbordercolor[]		= "#444444";
@@ -144,20 +144,20 @@ static int resizehints = 0;    /* 1 means respect size hints in tiled resizals *
 #include "grid.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "@@",	spiral },		/* Deafult: Fibonacci spiral */
-	{ "<><",	dwindle },		/* Decreasing in size right and leftward */
+	{ "",	spiral },		/* Deafult: Fibonacci spiral */
+	{ "",	dwindle },		/* Decreasing in size right and leftward */
 
- 	{ "[]=",	tile },			/* Master on left, slaves on right */
-	{ "[T]",	bstack },		/* Master on top, slaves on bottom */
+ 	{ "",	tile },			/* Master on left, slaves on right */
+	{ "",	bstack },		/* Master on top, slaves on bottom */
 
-	{ "[D]",	deck },			/* Master on left, slaves in monocle-like mode on right */
- 	{ "[M]",	monocle },		/* All windows on top of eachother */
+	{ "",	deck },			/* Master on left, slaves in monocle-like mode on right */
+ 	{ "",	monocle },		/* All windows on top of eachother */
 
-	{ "|M|",	centeredmaster },		/* Master in middle, slaves on sides */
-	{ "|F|",	centeredfloatingmaster },	/* Same but master floats */
+	{ "",	centeredmaster },		/* Master in middle, slaves on sides */
+	{ "",	centeredfloatingmaster },	/* Same but master floats */
 
-	{ "###", grid },			/* Grid layout */
-	{ "><>",	NULL },			/* no layout function means floating behavior */
+	{ "",	grid },			/* Grid layout */
+	{ "",	NULL },			/* no layout function means floating behavior */
 	{ NULL, NULL },
 };
 

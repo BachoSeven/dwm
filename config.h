@@ -21,7 +21,7 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static int vertpad            = 10;        /* vertical padding of bar */
 static int sidepad            = 10;        /* horizontal padding of bar */
-static char *fonts[]          = { "scientifica:size=20:antialias=true:autohint=true", "JoyPixels:size=20:antialias=true:autohint=true", "Noto Color Emoji:size=20:antialias=true:autohint=true", "Hack Nerd Font:size=20:antialias=true:autohint=true", "Font Awesome 7 Free:style=Solid:size=20:antialias=true:autohint=true", "Symbols Nerd Font Mono:size=20:antialias=true:autohint=true", "Noto Sans CJK JP:size=20:antialias=true:autohint=true", "Noto Sans CJK KR:size=20:antialias=true:autohint=true", "Noto Sans CJK SC:size=20:antialias=true:autohint=true", "Noto Sans CJK TC:size=20:antialias=true:autohint=true" };
+static char *fonts[]          = { "scientifica:size=18:antialias=true:autohint=true", "Hack Nerd Font:size=18:antialias=true:autohint=true", "Noto Color Emoji:size=14:antialias=true:autohint=true", "Symbols Nerd Font Mono:size=18:antialias=true:autohint=true", "Font Awesome 7 Free:style=Solid:size=18:antialias=true:autohint=true", "Noto Sans CJK JP:size=14:antialias=true:autohint=true", "Noto Sans CJK KR:size=14:antialias=true:autohint=true", "Noto Sans CJK SC:size=14:antialias=true:autohint=true", "Noto Sans CJK TC:size=14:antialias=true:autohint=true" };
 static char normfgcolor[]		= "#bbbbbb";
 static char normbgcolor[]		= "#222222";
 static char normbordercolor[]		= "#444444";

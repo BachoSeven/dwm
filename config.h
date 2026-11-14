@@ -275,7 +275,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_w,		spawn,		SHCMD("vieb") },
 	{ MODKEY,			XK_n,		spawn,		SHCMD("chromium") },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("killall -q nmtui-connect || st -e nmtui-connect") },
-	{ MODKEY,			XK_e,		spawn,		SHCMD(TERMINAL " -e mail-tui; kill -46 $(pidof dwmblocks)") },
+	{ MODKEY,			XK_e,		spawn,		SHCMD(TERMINAL " -e zsh -ic 'mail-tui; exit'; kill -46 $(pidof dwmblocks)") },
 	{ MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD(TERMINAL " -e  abook") },
 	// { MODKEY,			XK_r,		spawn,		SHCMD(TERMINAL " -e xplr") },
 	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD("killall -q btm || st -c sysMon -e btm") },
@@ -394,7 +394,7 @@ static Key keys[] = {
 	{ 0, XF86XK_ScreenSaver,	spawn,		SHCMD("br set 0 && slock & mpc -q pause; MPD_PORT=6600 mpc -q pause; pauseallmpv") },
 	{ 0, XF86XK_WebCam,		spawn,		SHCMD("camtoggle") },
 	// { 0, XF86XK_TaskPane,		spawn,		SHCMD(TERMINAL " -e htop") },
-	// { 0, XF86XK_Mail,		spawn,		SHCMD(TERMINAL " -e mail-tui; kill -46 $(pidof dwmblocks)") },
+	// { 0, XF86XK_Mail,		spawn,		SHCMD(TERMINAL " -e zsh -ic 'mail-tui; exit'; kill -46 $(pidof dwmblocks)") },
 	// { 0, XF86XK_MyComputer,		spawn,		SHCMD(TERMINAL " -e lf /") },
 	/* { 0, XF86XK_Battery,		spawn,		SHCMD("") }, */
 	{ 0, XF86XK_Launch1,		spawn,		SHCMD("xset dpms force off") },

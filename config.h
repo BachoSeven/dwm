@@ -78,7 +78,7 @@ const char *spcmd2[] = {TERMINAL, "-n", "spcalc", "-f", "monospace:size=16", "-g
 const char *spcmd3[] = {TERMINAL, "-n", "spbm", "-g", "140x40", "-e", "bm", "popup", NULL };
 const char *spcmd4[] = {TERMINAL, "-n", "spkp", "-g", "120x40", "-e", "keepassxc", NULL };
 const char *spcmd5[] = {TERMINAL, "-n", "sphist", "-g", "140x40", "-e", "hi", "popup", NULL };
-const char *spcmd6[] = {TERMINAL, "-n", "spvpn", "-g", "120x30", "-e", "/home/fra/.local/bin/unipi-vpn", NULL };
+const char *spcmd6[] = {TERMINAL, "-n", "spvpn", "-g", "120x30", "-e", "/home/fra/.local/bin/xdg/unipi-vpn", NULL };
 const char *spcmd7[] = {TERMINAL, "-n", "spjf", "-g", "140x40", "-e", "jellyfin-tui", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
@@ -132,6 +132,7 @@ static const Rule rules[] = {
 	{ NULL,			"spkp",		NULL,       	SPTAG(3),       1,		1,	0,	-1,  	0,0},
 	{ NULL,			"sphist",	NULL,       	SPTAG(4),       1,		1,	0,	-1,  	0,0},
 	{ NULL,			"spvpn",	NULL,       	SPTAG(5),       1,		1,	0,	-1,  	0,0},
+	{ NULL,			"spjf",		NULL,       	SPTAG(6),       1,		1,	0,	-1,  	0,0},
 };
 
 /* layout(s) */
@@ -143,20 +144,20 @@ static int resizehints = 0;    /* 1 means respect size hints in tiled resizals *
 #include "grid.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "",	spiral },		/* Deafult: Fibonacci spiral */
-	{ "侀",	dwindle },		/* Decreasing in size right and leftward */
+	{ "@@",	spiral },		/* Deafult: Fibonacci spiral */
+	{ "<><",	dwindle },		/* Decreasing in size right and leftward */
 
- 	{ "﬿",	tile },			/* Master on left, slaves on right */
-	{ "",	bstack },		/* Master on top, slaves on bottom */
+ 	{ "[]=",	tile },			/* Master on left, slaves on right */
+	{ "[T]",	bstack },		/* Master on top, slaves on bottom */
 
-	{ "",	deck },			/* Master on left, slaves in monocle-like mode on right */
- 	{ "",	monocle },		/* All windows on top of eachother */
+	{ "[D]",	deck },			/* Master on left, slaves in monocle-like mode on right */
+ 	{ "[M]",	monocle },		/* All windows on top of eachother */
 
-	{ "恵",	centeredmaster },		/* Master in middle, slaves on sides */
-	{ "",	centeredfloatingmaster },	/* Same but master floats */
+	{ "|M|",	centeredmaster },		/* Master in middle, slaves on sides */
+	{ "|F|",	centeredfloatingmaster },	/* Same but master floats */
 
-	{ "", grid },			/* Grid layout */
-	{ "",	NULL },			/* no layout function means floating behavior */
+	{ "###", grid },			/* Grid layout */
+	{ "><>",	NULL },			/* no layout function means floating behavior */
 	{ NULL, NULL },
 };
 

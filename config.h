@@ -79,6 +79,7 @@ const char *spcmd3[] = {TERMINAL, "-n", "spbm", "-g", "140x40", "-e", "bm", "pop
 const char *spcmd4[] = {TERMINAL, "-n", "spkp", "-g", "120x40", "-e", "keepassxc", NULL };
 const char *spcmd5[] = {TERMINAL, "-n", "sphist", "-g", "140x40", "-e", "hi", "popup", NULL };
 const char *spcmd6[] = {TERMINAL, "-n", "spvpn", "-g", "120x30", "-e", "/home/fra/.local/bin/unipi-vpn", NULL };
+const char *spcmd7[] = {TERMINAL, "-n", "spjf", "-g", "140x40", "-e", "jellyfin-tui", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
@@ -87,6 +88,7 @@ static Sp scratchpads[] = {
 	{"spkp",	spcmd4},
 	{"sphist",	spcmd5},
 	{"spvpn",	spcmd6},
+	{"spjf",	spcmd7},
 };
 
 static const char *const autostart[] = {
@@ -331,6 +333,7 @@ static Key keys[] = {
 	{ MODKEY|Mod1Mask,		XK_c,		spawn,		SHCMD("cqctl toggle") },
 	/* V is automatically bound above in STACKKEYS */
 	{ MODKEY|Mod1Mask,		XK_v,		togglescratch,	{.ui = 5} }, // VPN terminal
+	{ MODKEY|Mod1Mask,		XK_m,		togglescratch,	{.ui = 6} }, // Jellyfin music
 	{ MODKEY,			XK_b,		togglebar,	{0} },
 	{ MODKEY|ShiftMask,		XK_b,		togglescratch,	{.ui = 2} },
 	{ MODKEY|ShiftMask,		XK_n,		spawn,		SHCMD(TERMINAL " -e newsboat") },

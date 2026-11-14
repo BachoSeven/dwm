@@ -274,7 +274,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("killall -q nmtui-connect || st -e nmtui-connect") },
 	{ MODKEY,			XK_e,		spawn,		SHCMD(TERMINAL " -e neomutt; kill -46 $(pidof dwmblocks)") },
 	{ MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD(TERMINAL " -e  abook") },
-	{ MODKEY,			XK_r,		spawn,		SHCMD(TERMINAL " -e xplr") },
+	// { MODKEY,			XK_r,		spawn,		SHCMD(TERMINAL " -e xplr") },
 	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD("killall -q btm || st -c sysMon -e btm") },
 	{ MODKEY,			XK_y,		setlayout,	{.v = &layouts[0]} }, /* spiral */
 	{ MODKEY|ShiftMask,		XK_y,		setlayout,	{.v = &layouts[1]} }, /* dwindle */

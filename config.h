@@ -78,6 +78,7 @@ const char *spcmd2[] = {TERMINAL, "-n", "spcalc", "-f", "monospace:size=16", "-g
 const char *spcmd3[] = {TERMINAL, "-n", "spbm", "-g", "140x40", "-e", "bm", "popup", NULL };
 const char *spcmd4[] = {TERMINAL, "-n", "spkp", "-g", "120x40", "-e", "keepassxc", NULL };
 const char *spcmd5[] = {TERMINAL, "-n", "sphist", "-g", "140x40", "-e", "hi", "popup", NULL };
+const char *spcmd6[] = {TERMINAL, "-n", "spvpn", "-g", "120x30", "-e", "/home/fra/.local/bin/unipi-vpn", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
@@ -85,6 +86,7 @@ static Sp scratchpads[] = {
 	{"spbm",	spcmd3},
 	{"spkp",	spcmd4},
 	{"sphist",	spcmd5},
+	{"spvpn",	spcmd6},
 };
 
 static const char *const autostart[] = {
@@ -127,6 +129,7 @@ static const Rule rules[] = {
 	{ NULL,			"spbm",		NULL,       	SPTAG(2),       1,		1,	0,	-1,  	0,0},
 	{ NULL,			"spkp",		NULL,       	SPTAG(3),       1,		1,	0,	-1,  	0,0},
 	{ NULL,			"sphist",	NULL,       	SPTAG(4),       1,		1,	0,	-1,  	0,0},
+	{ NULL,			"spvpn",	NULL,       	SPTAG(5),       1,		1,	0,	-1,  	0,0},
 };
 
 /* layout(s) */
@@ -327,6 +330,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_c,		spawn,		SHCMD("cb") },
 	{ MODKEY|Mod1Mask,		XK_c,		spawn,		SHCMD("cqctl toggle") },
 	/* V is automatically bound above in STACKKEYS */
+	{ MODKEY|Mod1Mask,		XK_v,		togglescratch,	{.ui = 5} }, // VPN terminal
 	{ MODKEY,			XK_b,		togglebar,	{0} },
 	{ MODKEY|ShiftMask,		XK_b,		togglescratch,	{.ui = 2} },
 	{ MODKEY|ShiftMask,		XK_n,		spawn,		SHCMD(TERMINAL " -e newsboat") },
